@@ -132,6 +132,25 @@ $(document).ready(function(){
 			$(".notcomingle").show();
 		}
 	});
+	
+	/* Import Table Stuff */
+	$("#addlistbtn").click(function(){
+		$("#importtable .fieldlabel").each(function(){
+		$(this).append('<td><input type="checkbox"/></td>');
+		});
+		$("#importtable .listlabel").each(function(){
+		$(this).append('<td><textarea rows="2" cols="10" class="listname"></textarea></td>');
+		});
+		$("#tritable .trilabel").each(function(){
+		$(this).append('<td><textarea rows="1" cols="4" class="smallfont"></textarea></td>');
+		});
+   });
+   	$("#addfieldbtn").click(function(){
+		$("#importtable").each(function(){
+		$(this).append('<tr class="fieldlabel"><th class="nopadding"><textarea rows="1" cols="13"></textarea></th></tr>');
+		
+	});
+   });
 
 });	
 
