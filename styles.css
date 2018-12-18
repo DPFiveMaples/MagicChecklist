@@ -76,6 +76,7 @@ caption, .caption{
 	width: 48%;
 	max-width: 220px;
 	margin-top: 20px;
+	margin-bottom: 50px;
 	float: left;
 }
 #ncoatable, #dedupetable{
@@ -114,6 +115,7 @@ caption, .caption{
 	width: 48%;
 	max-width: 200px;
 	margin-top: 20px;
+	margin-bottom: 50px;
 	float: right;
 	
 	
