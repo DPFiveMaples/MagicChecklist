@@ -38,7 +38,7 @@
 				<ul>
 					<li><input id="LetterCheck" type="checkbox">Letter</li>
 					<li><input id="ReplyCheck" type="checkbox">Reply</li>
-					<li><input id="EnvelopeCheck" type="checkbox">Envelope/PC</li>
+					<li><input id="Env_PCCheck" type="checkbox">Envelope/PC</li>
 				</ul>
 			</li>
 			<li><input id="ComingleCheck" type="checkbox">Comingle</li>
@@ -113,7 +113,7 @@
 					<li><input type="checkbox">Verify Canadian and other foreign totals match wo</li>
 					<li><input type="checkbox">Staple distribution report to foreign work order</li>
 					<li><input type="checkbox">Check if processed with domestic or with p/s labels</li>
-					<li><input type="checkbox">Reorder records by country index</li>
+					<li><input type="checkbox">Reorder records by <span class="fcspr">zip-</span>country index</li>
 				</ul>
 			</li>			
 			<li><input type="checkbox">Update work order with final totals<span  class="foreign">-domestic and foreign</span></li>
@@ -126,7 +126,7 @@
 			<li class="comingle"><input type="checkbox">If <a href="http://watson/mediawiki/index.php/Comingling" target="_blank">Comingle</a>, follow wiki steps before proceeding</li>
 			<li class="sorted"><input type="checkbox">Postal sort
 				<ul>
-					<li><input type="checkbox">Correct select for sort <span  class="foreign">(Foreign or no Foreign?)</span></li>
+					<li><input type="checkbox">Correct select for sort <span class="foreign">(Foreign or no Foreign?)</span></li>
 					<li><input type="checkbox">Select Class and Category from work order</li>
 					<li><input type="checkbox">Verify weight on work order matches sample and enter</li>
 					<li><input type="checkbox">Measure piece thickness and enter
@@ -143,7 +143,7 @@
 						</ul>
 					</li>
 					<li class="dropselse"><input type="checkbox">Enter the zip code for where the job is dropping</li>
-					<li class="notcomingle"><input type="checkbox">Check box for <a href="http://watson/mediawiki/index.php/NDC/SCF" target="_blank">NDC or SCF</a>
+					<li class="notcomingle notdropselse"><input type="checkbox">Check box for <a href="http://watson/mediawiki/index.php/NDC/SCF" target="_blank">NDC or SCF</a>
 						<ul>
 							<li><input type="checkbox">If not profitable, cross out Geo</li>
 							<li><input type="checkbox">If profitable, write on work order and print page</li>
@@ -186,7 +186,7 @@
 				</ul>
 			</li>
 			<li><input type="checkbox">Fill out label layout on work order<span class="foreign"> (if foreign, fill out too)</span></li>
-			<li><input type="checkbox">Create labels
+			<li class="notenv_pc"><input type="checkbox">Create labels
 				<ul>
 					<li class="comingle"><input type="checkbox">Comingle fields included</li>
 					<li><input type="checkbox">Correct fields from worksheet</li>
@@ -198,7 +198,7 @@
 					<li class="pslabels"><input type="checkbox">Printed return address P/S labels if applicable</li>
 				</ul>
 			</li>
-			<li><input type="checkbox">Verify the labels saved/printed correctly
+			<li class="notenv_pc"><input type="checkbox">Verify the labels saved/printed correctly
 				<ul>
 					<li><input type="checkbox">Verify fields match worksheet</li>
 					<li><input type="checkbox">Check the correct number of lines in file</li>
@@ -233,15 +233,15 @@
 				</ul>
 			</li>
 			
-			<li class="envelope"><input type="checkbox">Create CSV for Envelope/Postcard pieces
+			<li class="env_pc"><input type="checkbox">Create CSV for Envelope/Postcard pieces
 				<ul>
-					<li class="envelope"><b>Envelope/Postcard</b></li>
-					<li><input type="checkbox" class="envelope">Correct fields from worksheet</li>
-					<li><input type="checkbox" class="envelope">Included IMB, OEL, S/P</li>
-					<li><input type="checkbox" class="envelope">Match to sample's highlighted fields</li>
-					<li><input type="checkbox" class="envelope">Scroll through preview labels</li>
-					<li><input type="checkbox" class="envelope">Record first and last record on work sheet</li>
-					<li><input type="checkbox" class="envelope">Save to the correct merge folder on L drive</li>
+					<li class="env_pc"><b>Envelope/Postcard</b></li>
+					<li><input type="checkbox" class="env_pc">Correct fields from worksheet</li>
+					<li><input type="checkbox" class="env_pc">Included IMB, OEL, S/P</li>
+					<li><input type="checkbox" class="env_pc">Match to sample's highlighted fields</li>
+					<li><input type="checkbox" class="env_pc">Scroll through preview labels</li>
+					<li><input type="checkbox" class="env_pc">Record first and last record on work sheet</li>
+					<li><input type="checkbox" class="env_pc">Save to the correct merge folder on L drive</li>
 					
 				</ul>
 			</li>

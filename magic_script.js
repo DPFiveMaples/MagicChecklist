@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$(".clientstock").hide();
 	$(".letter").hide();
 	$(".reply").hide();
-	$(".envelope").hide();
+	$(".env_pc").hide();
 	$(".comingle").hide();
 	$(".dropselse").hide();
 	
@@ -27,6 +27,7 @@ $(document).ready(function(){
 		}
 
 	});
+	
 	$("#MergeCheck").click(function(){
 		if($("#MergeCheck").is(":checked")){
 			$(".merge").show();
@@ -40,6 +41,11 @@ $(document).ready(function(){
 		$("#LetterCheck").click(function(){
 		if($("#LetterCheck").is(":checked")){
 			$(".letter").show();
+				$("#MergeCheck").prop("checked",true);
+				if($("#MergeCheck").is(":checked")){
+					$(".merge").show();
+					$(".notmerge").hide();
+				}
 		} else {
 			$(".letter").hide();
 		}
@@ -48,16 +54,29 @@ $(document).ready(function(){
 		$("#ReplyCheck").click(function(){
 		if($("#ReplyCheck").is(":checked")){
 			$(".reply").show();
+			$("#MergeCheck").prop("checked",true);
+				if($("#MergeCheck").is(":checked")){
+					$(".merge").show();
+					$(".notmerge").hide();
+				}
 		} else {
 			$(".reply").hide();
 		}
 
 	});
-		$("#EnvelopeCheck").click(function(){
-		if($("#EnvelopeCheck").is(":checked")){
-			$(".envelope").show();
+		$("#Env_PCCheck").click(function(){
+		if($("#Env_PCCheck").is(":checked")){
+			$(".env_pc").show();
+			$(".notenv_pc").hide();
+			$("#MergeCheck").prop("checked",true);
+				if($("#MergeCheck").is(":checked")){
+					$(".merge").show();
+					$(".notmerge").hide();
+				}
+			
 		} else {
-			$(".envelope").hide();
+			$(".env_pc").hide();
+			$(".notenv_pc").show();
 		}
 
 	});
@@ -118,8 +137,10 @@ $(document).ready(function(){
 		$("#DropsElseCheck").click(function(){
 		if($("#DropsElseCheck").is(":checked")){
 			$(".dropselse").show();
+			$(".notdropselse").hide();
 		} else {
 			$(".dropselse").hide();
+			$(".notdropselse").show();
 		}
 	});
 	
