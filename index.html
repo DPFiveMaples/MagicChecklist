@@ -43,6 +43,7 @@
 			</li>
 			<li><input id="ComingleCheck" type="checkbox">Comingle</li>
 			<li><input id="DropsElseCheck" type="checkbox">Drops Elsewhere</li>
+			<li><input id="WindowEnvCheck" type="checkbox">Windowed Envelope</li>
 		</ul>
 	</div>
 	</fieldset>
@@ -191,7 +192,7 @@
 					<li><input type="checkbox">Correct fields from worksheet</li>
 					<li><input type="checkbox">Required fields are locked</li>
 					<li><input type="checkbox">Scroll through preview labels</li>
-					<li><input type="checkbox">Included VPC ### for <a href="http://watson/mediawiki/index.php/Window_Envelopes" target="_blank">window envelopes</a></li>
+					<li class="windowenv"><input type="checkbox">Included VPC ### for <a href="http://watson/mediawiki/index.php/Window_Envelopes" target="_blank">window envelopes</a></li>
 					<li><input type="checkbox">Save to X and write file name on work order</li>
 					<li class="pslabels"><input type="checkbox">Printed manually (P/S labels only)</li>
 					<li class="pslabels"><input type="checkbox">Printed return address P/S labels if applicable</li>
@@ -270,7 +271,12 @@
 					</li>
 				</ul>
 			</li>		
-			<li class="merge"><input type="checkbox">Generate PDF proofs</li>
+			<li class="merge"><input type="checkbox">Generate proofs
+				<ul class="windowenv">
+					<li><input type="checkbox">If windowed envelope, create a live sample</li>
+					<li><input type="checkbox">Perform a tap test to make sure the addressing fits correctly inside the window</li>
+				</ul>
+			</li>
 			<li class="merge"><input type="checkbox">Ensure all pieces link to same logo</li>
 			<li class="merge"><input type="checkbox">If on <span class="clientstock">client stock, print on and scan to PDF</span><span class="fmstock">house paper, print on office printer</span></li>
 			<li class="merge"><input type="checkbox">All items on work order checked off (Except print dept items)</li>

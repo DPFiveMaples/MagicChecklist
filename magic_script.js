@@ -14,6 +14,7 @@ $(document).ready(function(){
 	$(".env_pc").hide();
 	$(".comingle").hide();
 	$(".dropselse").hide();
+	$(".windowenv").hide();
 	
 	
 /*checkbox conditions*/	
@@ -151,6 +152,14 @@ $(document).ready(function(){
 		} else {
 			$(".comingle").hide();
 			$(".notcomingle").show();
+		}
+	});
+	
+		$("#WindowEnvCheck").click(function(){
+		if($("#WindowEnvCheck").is(":checked")){
+			$(".windowenv").show();
+		} else {
+			$(".windowenv").hide();
 		}
 	});
 	
