@@ -2,22 +2,24 @@ $(document).ready(function(){
 /*hide "extras" from the start*/
 	$(".foreign").hide();
 	$(".secure").hide();
+	$(".retail").hide();
 	$(".merge").hide();
 	$(".NCOA").hide();
 	$(".dedupe").hide();
-	$(".fcspr").hide();
 	$(".ndcscf").hide();
+	$(".fcspr").hide();
 	$(".pslabels").hide();
 	$(".clientstock").hide();
+	$(".windowenv").hide();
 	$(".letter").hide();
 	$(".reply").hide();
 	$(".env_pc").hide();
 	$(".comingle").hide();
 	$(".dropselse").hide();
-	$(".windowenv").hide();
-	
-	
-/*checkbox conditions*/	
+	$(".sublist").hide();
+
+
+/*checkbox conditions*/
 	$("#SecureCheck").click(function(){
 		if($("#SecureCheck").is(":checked")){
 			$(".secure").show();
@@ -28,7 +30,7 @@ $(document).ready(function(){
 		}
 
 	});
-	
+
 	$("#MergeCheck").click(function(){
 		if($("#MergeCheck").is(":checked")){
 			$(".merge").show();
@@ -74,7 +76,7 @@ $(document).ready(function(){
 					$(".merge").show();
 					$(".notmerge").hide();
 				}
-			
+
 		} else {
 			$(".env_pc").hide();
 			$(".notenv_pc").show();
@@ -105,12 +107,24 @@ $(document).ready(function(){
 		$("#FCSPRCheck").click(function(){
 		if($("#FCSPRCheck").is(":checked")){
 			$(".fcspr").show();
-			$(".sorted").hide();
+			$(".notfcspr").hide();
 		} else {
 			$(".fcspr").hide();
-			$(".sorted").show();
+			$(".notfcspr").show();
 		}
 	});
+
+	$("#RetailCheck").click(function(){
+	if($("#RetailCheck").is(":checked")){
+		$(".retail").show();
+		$(".notretail").hide();
+				$("#FCSPRCheck").prop("checked",true);
+	} else {
+		$(".retail").hide();
+		$(".notretail").show();
+	}
+});
+
 		$("#NDCSCFCheck").click(function(){
 		if($("#NDCSCFCheck").is(":checked")){
 			$(".ndcscf").show();
@@ -134,7 +148,7 @@ $(document).ready(function(){
 			$(".fmstock").show();
 		}
 	});
-	
+
 		$("#DropsElseCheck").click(function(){
 		if($("#DropsElseCheck").is(":checked")){
 			$(".dropselse").show();
@@ -144,7 +158,7 @@ $(document).ready(function(){
 			$(".notdropselse").show();
 		}
 	});
-	
+
 		$("#ComingleCheck").click(function(){
 		if($("#ComingleCheck").is(":checked")){
 			$(".comingle").show();
@@ -154,7 +168,7 @@ $(document).ready(function(){
 			$(".notcomingle").show();
 		}
 	});
-	
+
 		$("#WindowEnvCheck").click(function(){
 		if($("#WindowEnvCheck").is(":checked")){
 			$(".windowenv").show();
@@ -162,7 +176,19 @@ $(document).ready(function(){
 			$(".windowenv").hide();
 		}
 	});
-	
+
+		$("#SublistCheck").click(function(){
+	  if($("#SublistCheck").is(":checked")){
+		  $(".sublist").show();
+		  $(".notsublist").hide();
+	  } else {
+		  $(".sublist").hide();
+		  $(".notsublist").show();
+	  }
+  });
+
+
+
 	/* Import Table Stuff */
 	$("#addlistbtn").click(function(){
 		$("#importtable .fieldlabel").each(function(){
@@ -178,16 +204,12 @@ $(document).ready(function(){
    	$("#addfieldbtn").click(function(){
 		$("#importtable").each(function(){
 		$(this).append('<tr class="fieldlabel"><th class="nopadding"><textarea rows="1" cols="13"></textarea></th></tr>');
-		
+
 	});
    });
 
-});	
+});
 
 function myFunction() {
     return "Are you sure you want to leave?";
 }
-	
-
-
-

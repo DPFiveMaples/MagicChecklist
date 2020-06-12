@@ -14,7 +14,7 @@ body {
 h1{
 	text-align: center;
 	font-size: 21pt;
-	
+
 }
 
 li {
@@ -26,15 +26,15 @@ fieldset {
 	margin-bottom: 30px;
 }
 
-#jobfeatures {	
+#jobfeatures {
     -webkit-column-count:4;
     -moz-column-count: 4;
     column-count: 4;
-	height: 90px;
+	height: 100px;
 	float: center;
 }
 
-#checklist {	
+#checklist {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
@@ -117,8 +117,8 @@ caption, .caption{
 	margin-top: 20px;
 	margin-bottom: 50px;
 	float: right;
-	
-	
+
+
 }
 
 /** **/
@@ -146,17 +146,17 @@ caption, .caption{
 	width: 47px;
 	text-align: center;
  }
- 
+
 .listlabel{
-	height: 95px;	
+	height: 95px;
 	vertical-align: bottom;
 }
 
 .listname{
-	-webkit-transform: rotate(-90deg); 
+	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
 	display: block;
-	transform-origin:17px 15px;	
+	transform-origin:17px 15px;
 }
 
 textarea{
@@ -194,4 +194,3 @@ textarea{
 .bottomfloatgroup{
 		min-width: 95%;
 }
-
