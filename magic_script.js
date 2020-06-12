@@ -123,70 +123,71 @@ $(document).ready(function(){
 		$(".retail").hide();
 		$(".notretail").show();
 	}
-});
-
-		$("#NDCSCFCheck").click(function(){
-		if($("#NDCSCFCheck").is(":checked")){
-			$(".ndcscf").show();
-		} else {
-			$(".ndcscf").hide();
-		}
-	});
-		$("#PSLabelsCheck").click(function(){
-		if($("#PSLabelsCheck").is(":checked")){
-			$(".pslabels").show();
-		} else {
-			$(".pslabels").hide();
-		}
-	});
-		$("#ClientStockCheck").click(function(){
-		if($("#ClientStockCheck").is(":checked")){
-			$(".clientstock").show();
-			$(".fmstock").hide();
-		} else {
-			$(".clientstock").hide();
-			$(".fmstock").show();
-		}
 	});
 
-		$("#DropsElseCheck").click(function(){
-		if($("#DropsElseCheck").is(":checked")){
-			$(".dropselse").show();
-			$(".notdropselse").hide();
-		} else {
-			$(".dropselse").hide();
-			$(".notdropselse").show();
-		}
+	$("#NDCSCFCheck").click(function(){
+	if($("#NDCSCFCheck").is(":checked")){
+		$(".ndcscf").show();
+	} else {
+		$(".ndcscf").hide();
+	}
+	});
+	
+	$("#PSLabelsCheck").click(function(){
+	if($("#PSLabelsCheck").is(":checked")){
+		$(".pslabels").show();
+	} else {
+		$(".pslabels").hide();
+	}
+	});
+	
+	$("#ClientStockCheck").click(function(){
+	if($("#ClientStockCheck").is(":checked")){
+		$(".clientstock").show();
+		$(".fmstock").hide();
+	} else {
+		$(".clientstock").hide();
+		$(".fmstock").show();
+	}
 	});
 
-		$("#ComingleCheck").click(function(){
-		if($("#ComingleCheck").is(":checked")){
-			$(".comingle").show();
-			$(".notcomingle").hide();
-		} else {
-			$(".comingle").hide();
-			$(".notcomingle").show();
-		}
+	$("#DropsElseCheck").click(function(){
+	if($("#DropsElseCheck").is(":checked")){
+		$(".dropselse").show();
+		$(".notdropselse").hide();
+	} else {
+		$(".dropselse").hide();
+		$(".notdropselse").show();
+	}
 	});
 
-		$("#WindowEnvCheck").click(function(){
-		if($("#WindowEnvCheck").is(":checked")){
-			$(".windowenv").show();
-		} else {
-			$(".windowenv").hide();
-		}
+	$("#ComingleCheck").click(function(){
+	if($("#ComingleCheck").is(":checked")){
+		$(".comingle").show();
+		$(".notcomingle").hide();
+	} else {
+		$(".comingle").hide();
+		$(".notcomingle").show();
+	}
 	});
 
-		$("#SublistCheck").click(function(){
-	  if($("#SublistCheck").is(":checked")){
-		  $(".sublist").show();
-		  $(".notsublist").hide();
-	  } else {
-		  $(".sublist").hide();
-		  $(".notsublist").show();
-	  }
-  });
+	$("#WindowEnvCheck").click(function(){
+	if($("#WindowEnvCheck").is(":checked")){
+		$(".windowenv").show();
+	} else {
+		$(".windowenv").hide();
+	}
+	});
 
+	$("#SublistCheck").click(function(){
+	if($("#SublistCheck").is(":checked")){
+		$(".sublist").show();
+		$(".notsublist").hide();
+	} else {
+		$(".sublist").hide();
+		$(".notsublist").show();
+	}
+	});
 
 
 	/* Import Table Stuff */
