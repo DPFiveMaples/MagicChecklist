@@ -72,15 +72,18 @@
 				<ul>
 					<li><input type="checkbox">Uppercase country</li>
 					<li><input type="checkbox">Move CSZ to just City field</li>
+					<li><input type="checkbox">Hide countries affected by COVID-19</li>
 				</ul>
 			</li>
 			<li><input type="checkbox"><a href="http://watson/mediawiki/index.php/Coding_Accuracy_Support_System" target="_blank">CASS</a> <span class="foreign">domestic </span>records
 				<ul>
+					<li class="foreign"><input type="checkbox">Set USPS select before running</li>
 					<li><input type="checkbox">Save in job folder</li>
 					<li><input type="checkbox">Verify quantity processed matches total coded</li>
 					<li><input type="checkbox">Calculate percent of records unable to be coded</li>
 					<li><input type="checkbox">Write quantity CASS'd on work order</li>
 					<li><input type="checkbox">Look at non-autos, fix obvious issues if quick</li>
+					<li><input type="checkbox">Flag hidden records RDC</li>
 				</ul>
 			</li>	
 			<li><input type="checkbox">Check for Add1 not empty and mark if Add1 is used</li>
@@ -104,6 +107,7 @@
 					<li><input type="checkbox">Write totals for each index on "pre" report</li>
 					<li><input type="checkbox">Mark total duplicates hidden on worksheet</li>
 					<li><input type="checkbox">Save and print "post-dedupe" distribution report</li>
+					<li><input type="checkbox">Flag hidden records DUPE</li>
 					<li><input type="checkbox">Remove suppression files if applicable</li>
 					<li><input type="checkbox">Write final totals for dom. and for. on worksheet</li>
 				</ul>
@@ -171,6 +175,8 @@
 					<li><input type="checkbox">Verify for accuracy (# of streams and trays)</li>
 				</ul>
 			</li>
+				<li class="sorted notcomingle"><input type="checkbox">Save and print pallet placards
+			</li>
 			<li class="dropselse"><input type="checkbox">Check if <a href="http://watson/mediawiki/index.php/Pallet_placards" target="_blank">pallet placards</a> are needed and print</li>
 			<li class="sorted"><input type="checkbox">Do <a href="http://watson/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a> - follow wiki steps</li>
 			<li class="sorted"><input type="checkbox">Do <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a> - follow wiki steps
@@ -189,6 +195,7 @@
 			<li class="notenv_pc"><input type="checkbox">Create labels
 				<ul>
 					<li class="comingle"><input type="checkbox">Comingle fields included</li>
+					<li><input type="checkbox">Verify output order</li>
 					<li><input type="checkbox">Correct fields from worksheet</li>
 					<li><input type="checkbox">Required fields are locked</li>
 					<li><input type="checkbox">Scroll through preview labels</li>
@@ -215,6 +222,7 @@
 			<li class="letter"><input type="checkbox">Create CSV for Letter pieces
 				<ul>
 					<li class="letter"><b>Letter</b></li>
+					<li><input type="checkbox" class="letter">Verify output order</li>
 					<li><input type="checkbox" class="letter">Correct fields from worksheet</li>
 					<li><input type="checkbox" class="letter">Match to sample's highlighted fields</li>
 					<li><input type="checkbox" class="letter">Scroll through preview labels</li>
@@ -226,6 +234,7 @@
 			<li class="reply"><input type="checkbox">Create CSV for Reply pieces
 				<ul>	
 					<li class="reply"><b>Reply</b></li>
+					<li><input type="checkbox" class="reply">Verify output order</li>
 					<li><input type="checkbox" class="reply">Correct fields from worksheet</li>
 					<li><input type="checkbox" class="reply">Match to sample's highlighted fields</li>
 					<li><input type="checkbox" class="reply">Scroll through preview labels</li>
@@ -237,6 +246,7 @@
 			<li class="env_pc"><input type="checkbox">Create CSV for Envelope/Postcard pieces
 				<ul>
 					<li class="env_pc"><b>Envelope/Postcard</b></li>
+					<li><input type="checkbox" class="env_pc">Verify output order</li>
 					<li><input type="checkbox" class="env_pc">Correct fields from worksheet</li>
 					<li><input type="checkbox" class="env_pc">Included IMB, OEL, S/P</li>
 					<li><input type="checkbox" class="env_pc">Match to sample's highlighted fields</li>
@@ -262,6 +272,7 @@
 					<li><input type="checkbox">Insert merge fields in required places</li>
 					<li><input type="checkbox">Check that vertical purge is enabled when needed</li>
 					<li><input type="checkbox">Ensure merge rules function (ie version switch)</li>
+					<li class="letter"><input type="checkbox">Check for 'no ask' sentence</li>
 					<li><input type="checkbox">Insert proofing box if needed (displays needed info, such as piece version, ID, list, to make proofing easier)</li>
 					<li><input type="checkbox">Set up presort sequence number
 						<ul>
@@ -283,13 +294,13 @@
 			<li class="merge"><input type="checkbox">All items on work order checked off (Except print dept items)</li>
 			<li class="merge"><input type="checkbox">Email the PM <span class="notsecure">your proofs</span><span class="secure">letting them know proofs are in the job folder</span></li>
 			<li class="merge"><input type="checkbox">Update schedule</li>
-			<li class="merge"><input type="checkbox">Final mail file exported</li>
 			<li class="merge"><input type="checkbox">Update Mailshop with final quantity and variable proof date/version</li>
+			<li class="merge"><input type="checkbox">Final mail file exported</li>
 			<li class="merge"><input type="checkbox">After approval, prepare file for printing
 				<ul>
 					<li><input type="checkbox">Proofing box removed</li>
 					<li><input type="checkbox">Review preflight window for any errors</li>
-					<li><input type="checkbox">Imposition correct for paper size</li>
+					<li><input type="checkbox">Set correct imposition for paper</li>
 					<li><input type="checkbox">Compose 2000 sheets at a time for normal stock, 1000 sheets for heavy stock</li>
 					<li><input type="checkbox">Check output PDFs for errors</li>
 					<li><input type="checkbox">Verify first and last records with your worksheet</li>
