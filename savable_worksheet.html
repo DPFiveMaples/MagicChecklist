@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	Name: DP Worksheet
+	Author: Kendra Kilian, Lee Darcy with significant assistance from friend Alex Klock.
+	Date: 07/27/2018, 6/0/2020
+	Description: This is an interactive version of our Data Processing Worksheet. It has enterable
+				boxes for our information and a dynamic table for loading multiple lists.
+				Added June 2020: This uses localStorage to save the data in textboxes and checkboxes.
+				Alex shared code with Lee on 6/30/20; Lee rearranged in the <script> below.
+-->
+
+	<title>Awesome DP Worksheet</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>DP Worksheet</h1>
+	<div class="jobinfo">
+	Job Name:&nbsp;<textarea class="upper text" id="jobName" name="pt1" rows="1" cols="50"></textarea>&emsp;
+	Work Order:&nbsp;<textarea class="upper text" id="workOrder" name="pt2" rows="1" cols="6"></textarea>&emsp;
+	Date:&nbsp;<textarea class="upper text" id="dateDate" name="pt3" rows="1" cols="8"></textarea>
+	<br><br>Sublisted From: &nbsp;&nbsp;&nbsp;<textarea class="upper text" id="sublistedFrom" name="pt4" rows="1" cols="25"></textarea>&emsp;
+  <input id="resetWorksheetBtn" type='button' value="Reset Worksheet">
+	<br><br>
+	</div>
+<div class="leftfloatgroup">
+	<div class="caption">Imported Fields:</div>
+	<div id="loadlist">
+
+	<input type="button" id="addfieldbtn" value="Add Field"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" id="addlistbtn" value="Add List">
+	<br><br>
+
+	<table id="importtable">
+		<tr class="listlabel">
+			<th>List</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Full Name</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Second Name</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Title</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Co</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Dept</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Add 1</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Add 2</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Add 3</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>City</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>State</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Zip</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Country</th>
+		</tr>
+		<tr class="fieldlabel">
+			<th>Code</th>
+		</tr>
+	</table>
+	<table id="tritable">
+		<tr class="trilabel">
+			<th>TRI</th>
+		</tr>
+	</table>
+	<br><b>Records grand total:</b> &nbsp;&nbsp;&nbsp;<textarea class="mid text" id="grandTotal" name="pt5" rows="1" cols="6"></textarea>
+	<br><b>Records hidden before cleanup:</b> &nbsp;&nbsp;&nbsp;<textarea class="mid text" id="recordsHidden" name="pt6"rows="1" cols="30"></textarea>
+	</div>
+</div>
+<div class="rightfloatgroup">
+	<div id="notes">
+		<table id="notestable">
+		<caption>Misc. Notes:</caption>
+		<tr>
+			<td><textarea class="mid text" id="miscNotes" name="pt7" rows="6" cols="30"></textarea></td>
+		</tr>
+		</table>
+	</div>
+	<div id="ncoa">
+	<table id="ncoatable">
+	<caption>NCOA:</caption>
+		<tr>
+			<td>File Name: </td>
+			<td><textarea class="mid text" id="fileName" name="pt8" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>NCOA Bad:</td>
+			<td><textarea class="mid text" id="ncoaBad" name="pt9"rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td><b>New Totals</b></td>
+		</tr>
+		<tr>
+			<td>USPS: </td>
+			<td><textarea class="mid text" id="ncoaUspsTotal" name="pt10" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Non USPS: </td>
+			<td><textarea class="mid text" id="ncoaNonuspsTotal" name="pt11" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Total: </td>
+			<td><textarea class="mid text" id="ncoaTotal" name="pt12" rows="1" cols="6"></textarea></td>
+		</tr>
+	</table>
+	</div>
+	<div id="dedupe">
+	<table id="dedupetable">
+	<caption>Dedupe:</caption>
+		<tr>
+			<td>Records hid pre-dupe:</td>
+			<td><textarea class="mid text" id="recordsHiddenPredupe" name="pt13" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Duplicates removed:</td>
+			<td><textarea class="mid text" id="dupesRemoved" name="pt14" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Suppression removed: </td>
+			<td><textarea class="mid text"  id="suppressionRemoved" name="pt15" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Sublisted/Extra Cuts:</td>
+			<td><textarea class="mid text" id="sublistedExtraCuts" name="pt16" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td><b>New Totals</b></td>
+		</tr>
+		<tr>
+			<td>USPS: </td>
+			<td><textarea class="mid text" id="dedupeUspsTotal" name="pt17" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Non USPS: </td>
+			<td><textarea class="mid text" id="dedupeNonuspsTotal" name="pt18" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Total: </td>
+			<td><textarea class="mid text" id="dedupeTotal" name="pt19" rows="1" cols="6"></textarea></td>
+		</tr>
+	</table>
+	</div>
+</div>
+
+<div class="bottomfloatgroup">
+	<div id="selects">
+		<table id="selectstable">
+		<caption>Standard Selects:</caption>
+		<tr>
+			<td>1. USPS & COUNTRY EXISTS</td>
+			<td><textarea class="mid text" id="uspsAndCountry" name="pt20" rows="1" cols="6"></textarea></td>
+			<td> Remove USA <textarea class="mid text" id="removeUSA" name="pt21" rows="1" cols="5"></textarea> CSZ to City <textarea class="mid text" id="cszToCity" name="pt22" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>2. NON-USPS & COUNTRY EMPTY</td>
+			<td><textarea class="mid text" id="nonuspsNoCountry" name="pt23" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="nonuspsnocountryFixed" name="pt24" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="nonuspsnocountryHidden" name="pt25" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>3. NON-USPS</td>
+			<td><textarea class="mid text" id="nonUSPS" name="pt26" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id=nonuspsFixed"" name="pt27" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="nonuspsHidden" name="pt28" rows="1" cols="5"></textarea> Foreign <textarea class="mid text" id="nonuspsForeign" name="pt29" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>4. NOT A STATE</td>
+			<td><textarea class="mid text" id="notState" name="pt30" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="notStateFixed" name="pt31" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="notStateHidden" name="pt32" rows="1" cols="5"></textarea> Foreign <textarea class="mid text" id="notStateForeign" name="pt33" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>5. A1 & A2 EMPTY</td>
+			<td><textarea class="mid text" id="a1anda2Empty" name="pt34" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="a1anda2EmptyFixed" name="pt35" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="a1anda2EmptyHidden" name="pt36" rows="1" cols="5"></textarea> Schools <textarea class="mid text" id="a1anda2EmptySchool" name="pt37" rows="1" cols="5"></textarea> Oth, OK <textarea class="mid text" id="a1anda2EmptyOther" name="pt38" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>6. FIRST & LAST EMPTY</td>
+			<td><textarea class="mid text" id="flEmpty" name="pt39" rows="1" cols="6"></textarea></td>
+			<td> Fixed to FN <textarea class="mid text" id="flEmptyFixed" name="pt40" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="flEmptyHidden" name="pt41" rows="1" cols="5"></textarea> Co/Oth, OK <textarea class="mid text" id="flEmptyOther" name="pt42" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>7. CITY EMPTY</td>
+			<td><textarea class="mid text" id="cityEmpty" name="pt43" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="cityEmptyFixed" name="pt44" rows="1" cols="5"></textarea> Hidden <textarea class="mid text" id="cityEmptyHidden" name="pt45" rows="1" cols="5"></textarea> Foreign <textarea class="mid text" id="cityEmptyForeign" name="pt46" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>8. A3 EXISTS</td>
+			<td><textarea class="mid text" id="a3Exists" name="pt47" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="a3ExistsFixed" name="pt48" rows="1" cols="5"></textarea> Ok <textarea class="mid text" id="a3ExistsOK" name="pt49" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>9. TRUNCATION/LONG LINE</td>
+			<td><textarea class="mid text" id="trLongLine" name="pt50" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="trLongLineFixed" name="pt51" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>10. REPEATING INFO</td>
+			<td><textarea class="mid text" id="repInfo" name="pt52" rows="1" cols="6"></textarea></td>
+			<td> Fixed <textarea class="mid text" id="repInfoFixed" name="pt53" rows="1" cols="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>11. A1 EXISTS (after CASS)</td>
+			<td><textarea class="mid text" id="a1AfterCass" name="pt54" rows="1" cols="6"></textarea></td>
+			<td></td>
+		</tr>
+		</table>
+	</div>
+
+	<div id="totals">
+		<table id="totalstable">
+		<caption>Totals After Initial Cleaning:</caption>
+		<tr>
+			<td>USPS:</td>
+			<td><textarea class="mid text" id="uspsCount" name="pt55" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Non USPS:</td>
+			<td><textarea class="mid text" id="nonuspsCount" name="pt56" rows="1" cols="6"></textarea></td>
+		</tr>
+		<tr>
+			<td>Total:</td>
+			<td><textarea class="mid text" id="totalCount" name="pt57" rows="1" cols="6"></textarea></td>
+		</tr>
+		</table>
+	</div>
+
+	<div id="times">
+	<table id="timestable">
+	<caption>Times:</caption>
+		<tr>
+			<td><textarea class="mid text" id="timeTally" name="pt58" rows="4" cols="30"></textarea></td>
+		</tr>
+	</table>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+
+function myFunction() {
+	return "Are you sure you want to leave?";
+}
+
+//This adds the defined Work Order number to the page title to make saving easier.
+var textbox = document.getElementById('workOrder')
+	function setTitle () {
+		document.title = textbox.value + " " + "DP Worksheet"
+		}
+	textbox.onkeyup = setTitle
+	textbox.onchange = setTitle
+
+
+// Alex revised all remaining code to make the form work as a whole instead of individuals segments.
+	const WORKSHEET_STORAGE_KEY = 'worksheet';
+
+	let WorksheetInfo = {
+		customFieldIndex: 0,
+		customListIndex: 0
+	};
+
+	function addCustomField() {
+			 $("#importtable").each(function() {
+					 $(this).append(`<tr class="fieldlabel customField"><th class="nopadding"><textarea name="field${WorksheetInfo.customFieldIndex}" rows="1" cols="13"></textarea></th></tr>`);
+					 WorksheetInfo.customFieldIndex++;
+			 });
+	 }
+
+	function addCustomList() {
+		let listIndex = WorksheetInfo.customListIndex;
+		$("#importtable .fieldlabel").each(function(i) {
+			$(this).append(`<td class="customList"><input name="list${listIndex}-${i}" type="checkbox"/></td>`);
+		});
+		$("#importtable .listlabel").each(function(){
+			$(this).append(`<td class="customList"><textarea name="list${listIndex}-name" rows="2" cols="10" class="listname"></textarea></td>`);
+		});
+		$("#tritable .trilabel").each(function() {
+			$(this).append(`<td class="customList"><textarea name="list${listIndex}-tri" rows="1" cols="4" class="smallfont"></textarea></td>`);
+		});
+		WorksheetInfo.customListIndex++;
+	}
+
+	function clearWorksheetFields() {
+		$('.customList, .customField').remove();
+		$('input[type=text], textarea').val('');
+		$('input[type=checkbox]').prop('checked', false);
+		WorksheetInfo.customFieldIndex = 0;
+		WorksheetInfo.customListIndex = 0;
+	}
+
+
+  //Serializes the form's data into a json object.
+	function getWorksheetData() {
+		let data = {};
+
+		$('input:not([type=button]), textarea').each(function () {
+			let input = $(this);
+			let inputName = input.attr('name');
+			let inputValue = input.is(':checkbox') ? input.is(':checked') : input.val();
+
+			//Only store if value exists... or if field ends with "-name".
+			//This special field is used to initialize the custom lists.
+			if (inputName && (inputValue || inputName.endsWith('-name'))) {
+				data[inputName] = inputValue;
+			}
+		});
+
+		return data;
+	}
+
+	function loadWorksheet() {
+		clearWorksheetFields();
+		if (!window.localStorage) {
+			return;
+		}
+		let existing = localStorage.getItem(WORKSHEET_STORAGE_KEY);
+		if (existing) {
+			existing = JSON.parse(existing);
+			console.log('loading:', existing);
+			setWorksheetData(existing);
+		}
+	}
+
+	//Clears fields and data in localStorage.
+	function resetWorksheet() {
+		clearWorksheetFields();
+		if (window.localStorage) {
+			localStorage.clear();
+		}
+	}
+
+	function saveWorksheet() {
+		if (!window.localStorage) {
+			return;
+		}
+
+		let data = getWorksheetData();
+
+		if (data && Object.keys(data).length) {
+			console.log('saving: ', data);
+			localStorage.setItem(WORKSHEET_STORAGE_KEY, JSON.stringify(data));
+		}
+	}
+
+	function setWorksheetData(data) {
+		if (!data) {
+			return;
+		}
+
+		let fieldNames = Object.keys(data);
+
+		// first lets initialize some custom fields... just add empty ones.
+		let customFields = fieldNames.filter(key => key.startsWith('field'));
+		for (let i = 0; i < customFields.length; i++) {
+			addCustomField();
+		}
+
+		// initialize empty custom lists... we're only looking for #list-#-name
+		let customLists = fieldNames.filter(key => key.startsWith('list') && key.endsWith('-name'));
+		for (let i = 0; i < customLists.length; i++) {
+			addCustomList();
+		}
+
+		// now that form has correct fields, let's populate the data.
+		for (let key of Object.keys(data)) {
+
+			let input = $(`[name='${key}'`);
+
+			if (input.length) {
+				if (input.is(':checkbox')) {
+					input.prop('checked', data[key]);
+				} else {
+					input.val(data[key]);
+				}
+			} else {
+				console.error(`setWorksheetData: Unable to bind form field '${key}' - no such element exists attribute name='${key}'.`);
+			}
+		}
+	}
+
+
+	if (window.localStorage) {
+		// load existing worksheet if it exists in localstorage...
+		loadWorksheet();
+		// bind change events to input and textareas (but not buttons). we are listing to body and looking for fields,
+		// this way we don't have to manually add events to newly added fields.
+		$('body').on('change', 'input:not([type=button]), textarea', function () {
+			saveWorksheet();
+		});
+
+		// adding custom fields...
+		$("#addfieldbtn").click(function(){
+				addCustomField();
+		});
+
+		$("#addlistbtn").click(function () {
+			addCustomList();
+		});
+
+		$('#resetWorksheetBtn').click(function () {
+			if (confirm('All form data will be cleared. Are you sure you want to reset?')) {
+				resetWorksheet();
+			}
+		});
+
+		// lets save worksheet just in case when leaving page... prob not needed since field change event.
+		$(window).bind('beforeunload', function (event) {
+			saveWorksheet();
+			return "Are you sure you want to leave?";
+		});
+	}
+
+});
+
+</script>
+</body>
+</html>
