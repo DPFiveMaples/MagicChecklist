@@ -57,7 +57,7 @@
 
 	<div id="checklist">
 		<ul>
-			<li><input type="checkbox" class="box">Read work order, initial and date, <a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">update MailShop</a> with DP start, DP initials, and DP status</li>
+			<li><input type="checkbox" class="box">Read work order, initial and date, <a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
 			<li class="secure"><input type="checkbox" class="box">Add the job to the Secure Job Deletion Schedule</li>
 			<li class="merge"><input type="checkbox" class="box">If Merge:
 				<ul>
@@ -74,7 +74,6 @@
 			<li class="merge"><input type="checkbox" class="box">If merge, compare random records to original data file</li>
 			<li class="notsublist"><input type="checkbox" class="box">Go through standard <a href="http://watson/mediawiki/index.php/Selects" target="_blank">selects</a> and mark on worksheet</li>
 			<li class="merge"><input type="checkbox" class="box">If merge with salutation, run "Bad Salutation" select</li>
-
 			<li class="foreign"><input type="checkbox" class="box">If foreign records:
 				<ul>
 					<li><input type="checkbox" class="box">Uppercase country</li>
@@ -83,7 +82,7 @@
 				</ul>
 			</li>
 			<li class="notsublist"><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Coding_Accuracy_Support_System" target="_blank">CASS</a> <span class="foreign">domestic </span>records
-				<ul>
+      <ul>
 					<li class="foreign"><input type="checkbox" class="box">Set USPS select before running</li>
 					<li><input type="checkbox" class="box">Save in job folder</li>
 					<li><input type="checkbox" class="box">Verify quantity processed matches total coded</li>
@@ -93,7 +92,8 @@
 					<li><input type="checkbox" class="box">Flag hidden records RDC</li>
 				</ul>
 			</li>
-			<li class="notsublist"><input type="checkbox" class="box">Check for Add1 not empty and mark if Add1 is used</li>
+      <li class="notsublist"><input type="checkbox" class="box">Check for Add1 not empty and mark if Add1 is used</li>
+      <li class="notsublist"><input type="checkbox" class="box">Check for PO Boxes in Add 1</li>
 			<li class="NCOA"><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/NCOA" target="_blank">If NCOA<a>:
 				<ul>
 					<li><input type="checkbox" class="box">Write last four digits of NCOA file on worksheet</li>
@@ -130,7 +130,7 @@
 			</li>
 			<li><input type="checkbox" class="box">Update work order with final totals<span  class="foreign">-domestic and foreign</span></li>
 			<li><input type="checkbox" class="box">Email final totals to print department if applicable</li>
-			<li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>	
+      <li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>
 			<li class="retail"><input type="checkbox" class="box">Write 'No EDOC' on wo
 				<ul><li class="merge"><input type="checkbox" class="box">If merge, reorder if needed, then create presort #</li>
 				</ul>
@@ -224,7 +224,7 @@
 			<li class="comingle"><input type="checkbox" class="box">Order form and other files sent to firebird</li>
 			<li class="notmerge"><input type="checkbox" class="box">All items on work order checked off and end date filled out</li>
 			<li class="notmerge"><input type="checkbox" class="box">Final mail file exported</li>
-			<li class="notmerge"><input type="checkbox" class="box">Update Mailshop with final quantity, end date, and DP status</li>
+			<li class="notmerge"><input type="checkbox" class="box">Update Midnight with final quantity, end date, and DP status</li>
 			<li class="letter"><input type="checkbox" class="box">Create CSV for Letter pieces
 				<ul>
 					<li class="letter"><b>Letter</b></li>
@@ -298,8 +298,7 @@
 			<li class="merge"><input type="checkbox" class="box">If on <span class="clientstock">client stock, print on and scan to PDF</span><span class="fmstock">house paper, print on office printer</span></li>
 			<li class="merge"><input type="checkbox" class="box">All items on work order checked off (Except print dept items)</li>
 			<li class="merge"><input type="checkbox" class="box">Email the PM <span class="notsecure">your proofs</span><span class="secure">letting them know proofs are in the job folder</span></li>
-			<li class="merge"><input type="checkbox" class="box">Update schedule</li>
-			<li class="merge"><input type="checkbox" class="box">Update Mailshop with final quantity and variable proof date/version</li>
+			<li class="merge"><input type="checkbox" class="box">Update Midnight with final quantity and variable proof date/version</li>
 			<li class="merge"><input type="checkbox" class="box">Final mail file exported</li>
 			<li class="merge"><input type="checkbox" class="box">After approval, prepare file for printing
 				<ul>
@@ -310,9 +309,8 @@
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Check output PDFs for errors</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Verify first and last records with your worksheet</li>
 					<li><input type="checkbox" class="box">Have another DP member do Post Compose check</li>
-					<li><input type="checkbox" class="box">If job has external production proofs (see schedule), email production that job is approved</li>
-					<li><input type="checkbox" class="box">Mark approved on schedule and cross out DP section</li>
-					<li><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">Update MailShop</a> with end date, DP status, and Proof approval.</li>
+					<li><input type="checkbox" class="box">If job has external production proofs, email production that job is approved</li>
+					<li><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
 				</ul>
 			</li>
 		</ul>
