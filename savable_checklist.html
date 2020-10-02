@@ -7,8 +7,7 @@
 	Date: 06/0/2018, 6/0/2020
 	Description: This is an interactive version of our Data Processing Checklist. It has interactive
 				checkboxes that change which items are displayed.
-				Added June 2020: This uses localStorage to save the data
-				in textboxes and checkboxes.
+				Added June 2020: This uses localStorage to save the data in textboxes and checkboxes.
 -->
   <title>Awesome DP Checklist</title>
 	<link rel="stylesheet" href="styles.css">
@@ -17,7 +16,7 @@
 </head>
 <body onbeforeunload="return myFunction()">
 <h1>Process Checklist</h1>
-	<div class="jobinfo">
+  <div class="jobinfo">
 		Job Name:&nbsp;<textarea class="upper text" id="jobName" name="pt1" rows="1" cols="40"></textarea>&emsp;
 		Work Order:&nbsp;<textarea class="upper text" id="workOrder" name="pt2" rows="1" cols="6"></textarea>&emsp;
 		Date:&nbsp;<textarea class="upper text" id="dateDate" name="pt3" rows="1" cols="8"></textarea>
@@ -55,25 +54,37 @@
 	</div>
 	</fieldset>
 
+    <!--<div class="worklocation">
+      <center>
+    Work Location: &emsp; <input type="radio" name="work_location" value="remote" checked>Remote &emsp; <input type="radio" name="work_location" value="on_site">On Site
+      </center>
+    <br>
+  </div> Set Styles.css for fieldset from 30 to 15!-->
+
 	<div id="checklist">
 		<ul>
-			<li><input type="checkbox" class="box">Read work order, initial and date, <a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
+			<li><input type="checkbox" class="box">Pull up Midnight report; <a href="http://watson/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
+      <li><input type="checkbox" class="box">Verify if FM or client stock
 			<li class="secure"><input type="checkbox" class="box">Add the job to the Secure Job Deletion Schedule</li>
-			<li class="merge"><input type="checkbox" class="box">If Merge:
+      <span class="notsublist">
+      <li class="merge"><input type="checkbox" class="box">If Merge:
 				<ul>
 					<li><input type="checkbox" class="box">Review all pieces, identify all merge fields</li>
 					<li><input type="checkbox" class="box">If needed, <a href="http://watson/mediawiki/index.php/Ask_String_Table" target="_blank">code ask strings</a> and LG date per WO</li>
 				</ul>
 			</li>
-			<li class="notsublist"><input type="checkbox" class="box">Convert data file to text (tab delimited) if needed (formating)
+    </span>
+			<li class="notsublist"><input type="checkbox" class="box">Convert data file to text (tab delimited) if needed
 				<ul>
 					<li><input type="checkbox" class="box">If .txt, select double quotes while <a href="http://watson/mediawiki/index.php/List_Loading" target="_blank">loading file</a></li>
 				</ul>
 			</li>
 			<li class="notsublist"><input type="checkbox" class="box">Check off the fields imported and TRI on worksheet</li>
-			<li class="merge"><input type="checkbox" class="box">If merge, compare random records to original data file</li>
-			<li class="notsublist"><input type="checkbox" class="box">Go through standard <a href="http://watson/mediawiki/index.php/Selects" target="_blank">selects</a> and mark on worksheet</li>
+			<span class="notsublist">
+        <li class="merge"><input type="checkbox" class="box">If merge, compare random records to original data file</li>
+			<li><input type="checkbox" class="box">Go through standard <a href="http://watson/mediawiki/index.php/Selects" target="_blank">selects</a> and mark on worksheet</li>
 			<li class="merge"><input type="checkbox" class="box">If merge with salutation, run "Bad Salutation" select</li>
+    </span>
 			<li class="foreign"><input type="checkbox" class="box">If foreign records:
 				<ul>
 					<li><input type="checkbox" class="box">Uppercase country</li>
@@ -87,7 +98,7 @@
 					<li><input type="checkbox" class="box">Save in job folder</li>
 					<li><input type="checkbox" class="box">Verify quantity processed matches total coded</li>
 					<li><input type="checkbox" class="box">Calculate percent of records unable to be coded</li>
-					<li><input type="checkbox" class="box">Write quantity CASS'd on work order</li>
+					<li><input type="checkbox" class="box">Update quantity CASS'd in Midnight</li>
 					<li><input type="checkbox" class="box">Look at non-autos, fix obvious issues if quick</li>
 					<li><input type="checkbox" class="box">Flag hidden records RDC</li>
 				</ul>
@@ -98,11 +109,11 @@
 				<ul>
 					<li><input type="checkbox" class="box">Write last four digits of NCOA file on worksheet</li>
 					<li><input type="checkbox" class="box">Save cert in NCOA folder</li>
-					<li><input type="checkbox" class="box">Record number of NCOA'd records on work order</li>
+					<li><input type="checkbox" class="box">Update number of NCOA'd records in Midnight</li>
 					<li><input type="checkbox" class="box">Copy CSV and rename in NCOA folder</li>
 					<li><input type="checkbox" class="box">Export records to NCOA folder and fix warnings</li>
 					<li class="notsecure"><input type="checkbox" class="box">Send zipped folder to client</li>
-					<li class="secure"><input type="checkbox" class="box">Email PM informing them that the files are saved in the job folder</li>
+					<li class="secure"><input type="checkbox" class="box">Email PM that the files are saved in the job folder</li>
 					<li><input type="checkbox" class="box">Use NCOA BAD select to modify and hide bad files</li>
 					<li><input type="checkbox" class="box">Write number of NCOA bad records on worksheet</li>
 				</ul>
@@ -110,10 +121,10 @@
 			<li class="dedupe"><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Duplicate_Removal" target="_blank">If De-Dupe</a>:
 				<ul>
 					<li><input type="checkbox" class="box">Record number of previously hidden records</li>
-					<li><input type="checkbox" class="box">Save and print a "pre-dedupe" <a href="http://watson/mediawiki/index.php/Distribution_Report" target="_blank">distribution report</a></li>
+					<li><input type="checkbox" class="box">Save "pre-dedupe" <a href="http://watson/mediawiki/index.php/Distribution_Report" target="_blank">distribution report</a></li>
 					<li><input type="checkbox" class="box">Write totals for each index on "pre" report</li>
 					<li><input type="checkbox" class="box">Mark total duplicates hidden on worksheet</li>
-					<li><input type="checkbox" class="box">Save and print "post-dedupe" distribution report</li>
+					<li><input type="checkbox" class="box">Save "post-dedupe" distribution report</li>
 					<li><input type="checkbox" class="box">Flag hidden records DUPE</li>
 					<li><input type="checkbox" class="box">Remove suppression files if applicable</li>
 					<li><input type="checkbox" class="box">Write final totals for dom. and for. on worksheet</li>
@@ -123,16 +134,16 @@
 				<ul>
 					<li><input type="checkbox" class="box">Print distribution report by country index</li>
 					<li><input type="checkbox" class="box">Verify Canadian and other foreign totals match wo</li>
-					<li><input type="checkbox" class="box">Staple distribution report to foreign work order</li>
 					<li><input type="checkbox" class="box">Check if processed with domestic or with p/s labels</li>
 					<li><input type="checkbox" class="box">Reorder records by <span class="retail">zip-</span>country index</li>
 				</ul>
 			</li>
-			<li><input type="checkbox" class="box">Update work order with final totals<span  class="foreign">-domestic and foreign</span></li>
-			<li><input type="checkbox" class="box">Email final totals to print department if applicable</li>
+      <li class="merge"><input type="checkbox" class="box">Create labels before sublisting if applicable</li>
+			<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> (domestic and foreign)</span></li>
+			<li><input type="checkbox" class="box">If static print included, email final totals to print dept</li>
       <li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>
 			<li class="retail"><input type="checkbox" class="box">Write 'No EDOC' on wo
-				<ul><li class="merge"><input type="checkbox" class="box">If merge, reorder if needed, then create presort #</li>
+				<ul><li class="merge"><input type="checkbox" class="box">Reorder if needed, then create presort #</li>
 				</ul>
 			</li>
 			<li class="comingle"><input type="checkbox" class="box">If <a href="http://watson/mediawiki/index.php/Comingling" target="_blank">Comingle</a>, follow wiki steps before proceeding</li>
@@ -140,13 +151,9 @@
 				<ul>
 					<li><input type="checkbox" class="box">Correct select for sort <span class="foreign">(Foreign or no Foreign?)</span></li>
 					<li><input type="checkbox" class="box">Select Class and Category from work order</li>
-					<li><input type="checkbox" class="box">Verify weight on work order matches sample and enter</li>
-					<li><input type="checkbox" class="box">Measure piece thickness and enter
-						<ul>
-							<li><input type="checkbox" class="box">Write thickness on work order</li>
-						</ul>
-					</li>
-					<li><input type="checkbox" class="box">Measure length and width and enter (if not #10)</li>
+					<li><input type="checkbox" class="box">Verify weight is in Midnight</li>
+					<li><input type="checkbox" class="box">Verify piece thickness is in Midnight</li>
+					<li><input type="checkbox" class="box">If not #10, verify l and w is in Midnight</li>
 					<li><input type="checkbox" class="box">Select appropriate tray options if applicable</li>
 					<li><input type="checkbox" class="box">Select postage type
 						<ul>
@@ -157,20 +164,20 @@
 					<li class="dropselse"><input type="checkbox" class="box">Enter the zip code for where the job is dropping</li>
 					<li class="notcomingle notdropselse notfc"><input type="checkbox" class="box">Check box for <a href="http://watson/mediawiki/index.php/NDC/SCF" target="_blank">NDC or SCF</a>
 						<ul>
-							<li><input type="checkbox" class="box">If not profitable, cross out Geo</li>
-							<li><input type="checkbox" class="box">If profitable, write on work order and print page</li>
+							<li><input type="checkbox" class="box">If not profitable, type None in Midnight</li>
+							<li><input type="checkbox" class="box">If profitable, type location in Midnight & save</li>
 						</ul>
 					</li>
 				</ul>
 			</li>
 			<li class="notretail"><input type="checkbox" class="box">Verify record count in sort matches work order</li>
-			<li class="notretail notcomingle"><input type="checkbox" class="box">Save and print qualification report
+			<li class="notretail notcomingle"><input type="checkbox" class="box">Save qualification report
 				<ul>
 					<li><input type="checkbox" class="box">Review printout for accuracy (thickness, weight and class/category of mail)</li>
-					<li class="ndcscf"><input type="checkbox" class="box">If NDC/SCF-separate last page of report and staple to first report</li>
+					<li class="ndcscf"><input type="checkbox" class="box">If NDC/SCF-separate last page of report and save with first report</li>
 				</ul>
 			</li>
-			<li class="notretail notcomingle"><input type="checkbox" class="box">Save and print 3602N (Postage Statement) report
+			<li class="notretail notcomingle"><input type="checkbox" class="box">Save 3602N (Postage Statement) report
 				<ul>
 					<li><input type="checkbox" class="box">Enter move update method</li>
 					<li><input type="checkbox" class="box">Review printout for accuracy (class, cat, # of pieces, postage type, permit, crid, mu method)</li>
@@ -179,14 +186,15 @@
 			<li class="notretail notcomingle"><input type="checkbox" class="box">Print container tags
 				<ul>
 					<li class="dropselse"><input type="checkbox" class="box">Change tag location to where it will be dropping</li>
-					<li><input type="checkbox" class="box">Verify for accuracy (# of streams and trays)</li>
+          <li><input type="checkbox" class="box">Verify printer is clear</li>
+          <li><input type="checkbox" class="box">Select IM Tray</li>
 				</ul>
 			</li>
-				<li class="notretail notcomingle"><input type="checkbox" class="box">Save and print pallet placards
+				<li class="notretail notcomingle"><input type="checkbox" class="box">Save pallet placards
 			</li>
 			<li class="dropselse"><input type="checkbox" class="box">Check if <a href="http://watson/mediawiki/index.php/Pallet_placards" target="_blank">pallet placards</a> are needed and print</li>
-			<li class="notretail"><input type="checkbox" class="box">Do <a href="http://watson/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a> - follow wiki steps</li>
-			<li class="notretail"><input type="checkbox" class="box">Do <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a> - follow wiki steps
+			<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a></li>
+			<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a>
 				<ul class="notcomingle">
 					<li><input type="checkbox" class="box">Upload to Postal One</li>
 					<li><input type="checkbox" class="box">Verify upload and accuracy on USPS website</li>
@@ -198,8 +206,10 @@
 					<li><input type="checkbox" class="box">Send email to warehouse</li>
 				</ul>
 			</li>
-			<li><input type="checkbox" class="box">Fill out label layout on work order<span class="foreign"> (if foreign, fill out too)</span></li>
-			<li class="notenv_pc"><input type="checkbox" class="box">Create labels
+      <li><input type="checkbox" class="box">Save Consolidated WO and transfer checkmarks</li>
+      <li class="foreign"><input type="checkbox" class="box">Save Foreign WO and transfer checkmarks</li>
+			<li><input type="checkbox" class="box">Fill out<span class="foreign"> domestic and foreign</span> label layout on work order</li>
+			<li class="notenv_pc"><input type="checkbox" class="box">Setup labels
 				<ul>
 					<li class="comingle"><input type="checkbox" class="box">Comingle fields included</li>
 					<li><input type="checkbox" class="box">Verify output order</li>
@@ -207,59 +217,62 @@
 					<li><input type="checkbox" class="box">Required fields are locked</li>
 					<li><input type="checkbox" class="box">Scroll through preview labels</li>
 					<li class="windowenv"><input type="checkbox" class="box">Included VPC ### for <a href="http://watson/mediawiki/index.php/Window_Envelopes" target="_blank">window envelopes</a></li>
-					<li><input type="checkbox" class="box">Save to X and write file name on work order</li>
-					<li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
-					<li class="pslabels"><input type="checkbox" class="box">Printed return address P/S labels if applicable</li>
 				</ul>
 			</li>
-			<li class="notenv_pc"><input type="checkbox" class="box">Verify the labels saved/printed correctly
+      <li class="notmerge"><input type="checkbox" class="box">Save/Print Labels to X
+        <ul>
+          <li><input type="checkbox" class="box">Type file name on work order</li>
+          <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
+          <li class="pslabels"><input type="checkbox" class="box">Printed return address P/S labels if applicable</li>
+        </ul>
+      </li>
+      <li class="notmerge"><input type="checkbox" class="box">Verify the labels saved/printed correctly
+        <ul>
+          <li><input type="checkbox" class="box">Verify fields match worksheet</li>
+          <li><input type="checkbox" class="box">Check the correct number of lines in file</li>
+          <li><input type="checkbox" class="box">Check for long fields and inconsistent case</li>
+          <li><input type="checkbox" class="box">Check city for spacing and zip for placement</li>
+          <li class="foreign"><input type="checkbox" class="box">Check if ordered by country</li>
+        </ul>
+      </li>
+      <li class="merge"><input type="checkbox" class="box">Select proofs; flag in Mail Manager and record on WO
 				<ul>
-					<li><input type="checkbox" class="box">Verify fields match worksheet</li>
-					<li><input type="checkbox" class="box">Check the correct number of lines in file</li>
-					<li><input type="checkbox" class="box">Check for long fields and inconsistent case</li>
-					<li><input type="checkbox" class="box">Check city for spacing and zip for placement</li>
-					<li class="foreign"><input type="checkbox" class="box">If foreign, check if ordered by country</li>
+					<li><input type="checkbox" class="box">Longest field</li>
+					<li><input type="checkbox" class="box">Max amount of fields</li>
+					<li class="foreign"><input type="checkbox" class="box">Foreign</li>
+					<li><input type="checkbox" class="box">All versions represented</li>
 				</ul>
 			</li>
-			<li class="comingle"><input type="checkbox" class="box">Order form and other files sent to firebird</li>
-			<li class="notmerge"><input type="checkbox" class="box">All items on work order checked off and end date filled out</li>
-			<li class="notmerge"><input type="checkbox" class="box">Final mail file exported</li>
-			<li class="notmerge"><input type="checkbox" class="box">Update Midnight with final quantity, end date, and DP status</li>
-			<li class="letter"><input type="checkbox" class="box">Create CSV for Letter pieces
+      <li class="letter"><input type="checkbox" class="box">Create limited CSV for Letter proofs
 				<ul>
 					<li class="letter"><b>Letter</b></li>
 					<li><input type="checkbox" class="letter box">Verify output order</li>
 					<li><input type="checkbox" class="letter box">Correct fields from worksheet</li>
 					<li><input type="checkbox" class="letter box">Match to sample's highlighted fields</li>
 					<li><input type="checkbox" class="letter box">Scroll through preview labels</li>
-					<li><input type="checkbox" class="letter box">Record first and last record on work sheet</li>
 					<li><input type="checkbox" class="letter box">Save to the Letter merge folder on L drive</li>
 				</ul>
 			</li>
-
-			<li class="reply"><input type="checkbox" class="box">Create CSV for Reply pieces
+			<li class="reply"><input type="checkbox" class="box">Create limited CSV for Reply proofs
 				<ul>
 					<li class="reply"><b>Reply</b></li>
 					<li><input type="checkbox" class="reply box">Verify output order</li>
 					<li><input type="checkbox" class="reply box">Correct fields from worksheet</li>
 					<li><input type="checkbox" class="reply box">Match to sample's highlighted fields</li>
 					<li><input type="checkbox" class="reply box">Scroll through preview labels</li>
-					<li><input type="checkbox" class="reply box">Record first and last record on work sheet</li>
 					<li><input type="checkbox" class="reply box">Save to the Reply merge folder on L drive</li>
 				</ul>
 			</li>
-
-			<li class="env_pc"><input type="checkbox" class="box">Create CSV for Envelope/Postcard pieces
+			<li class="env_pc"><input type="checkbox" class="box">Create limited CSV for Envelope/Postcard proofs
 				<ul>
 					<li class="env_pc"><b>Envelope/Postcard</b></li>
-					<li><input type="checkbox" class="env_pc box">Verify output order</li>
+          <li><input type="checkbox" class="env_pc notretail box">Mark IMB, OEL, S/P in MailManager</li>
+          <li><input type="checkbox" class="env_pc box">Verify output order</li>
 					<li><input type="checkbox" class="env_pc box">Correct fields from worksheet</li>
-					<li><input type="checkbox" class="env_pc box">Included IMB, OEL, S/P</li>
-					<li><input type="checkbox" class="env_pc box">Match to sample's highlighted fields</li>
+					<li><input type="checkbox" class="env_pc box">Include IMB, OEL, S/P on piece</li>
+          <li><input type="checkbox" class="env_pc box">Match to sample's highlighted fields</li>
 					<li><input type="checkbox" class="env_pc box">Scroll through preview labels</li>
-					<li><input type="checkbox" class="env_pc box">Record first and last record on work sheet</li>
 					<li><input type="checkbox" class="env_pc box">Save to the correct merge folder on L drive</li>
-
 				</ul>
 			</li>
 			<li class="merge"><input type="checkbox" class="box">Set up merge
@@ -280,28 +293,26 @@
 				</ul>
 			</li>
 			<li class="merge"><input type="checkbox" class="box">Verify first and last records match for all pieces</li>
-			<li class="merge"><input type="checkbox" class="box">Select proofs and record on work order
-				<ul>
-					<li><input type="checkbox" class="box">Longest field</li>
-					<li><input type="checkbox" class="box">Max amount of fields</li>
-					<li class="foreign"><input type="checkbox" class="box">Foreign</li>
-					<li><input type="checkbox" class="box">All versions represented</li>
-				</ul>
-			</li>
+      <li class="merge"><input type="checkbox" class="box">Record first and last record on work sheet</li>
 			<li class="merge"><input type="checkbox" class="box">Generate proofs
 				<ul class="windowenv">
 					<li><input type="checkbox" class="box">If windowed envelope, create a live sample</li>
 					<li><input type="checkbox" class="box">Perform a tap test to make sure the addressing fits correctly inside the window</li>
 				</ul>
-			</li>
+			<ul>
 			<li class="merge"><input type="checkbox" class="box">Ensure all pieces link to same logo</li>
-			<li class="merge"><input type="checkbox" class="box">If on <span class="clientstock">client stock, print on and scan to PDF</span><span class="fmstock">house paper, print on office printer</span></li>
-			<li class="merge"><input type="checkbox" class="box">All items on work order checked off (Except print dept items)</li>
-			<li class="merge"><input type="checkbox" class="box">Email the PM <span class="notsecure">your proofs</span><span class="secure">letting them know proofs are in the job folder</span></li>
-			<li class="merge"><input type="checkbox" class="box">Update Midnight with final quantity and variable proof date/version</li>
-			<li class="merge"><input type="checkbox" class="box">Final mail file exported</li>
+			<li class="merge"><input type="checkbox" class="box">If on <span class="clientstock">client stock, print on and scan to PDF</span><span class="fmstock">house paper, create PDF</span</li>
+      </ul>
+			<li class="merge"><input type="checkbox" class="box">All items on work order checked off (except print dept items)</li>
+			<li class="merge"><input type="checkbox" class="box">Email PM <span class="notsecure">your proofs</span><span class="secure">that proofs are in the job folder</span></li>
+			<li class="merge"><input type="checkbox" class="box">Update Midnight with variable proof date/version</li>
+			<li class="merge"><input type="checkbox" class="box">Export final mail file</li>
+      <li class="comingle"><input type="checkbox" class="box">Order form and other files sent to firebird</li>
+			<li class="notmerge"><input type="checkbox" class="box">All items on work order checked off & end date filled out</li>
+			<li class="notmerge"><input type="checkbox" class="box">Export final mail file</li>
 			<li class="merge"><input type="checkbox" class="box">After approval, prepare file for printing
 				<ul>
+          <li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Link FULL CSV database to InDesign</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Proofing box removed</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Review preflight window for any errors</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Set correct imposition for paper</li>
@@ -310,10 +321,41 @@
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Verify first and last records with your worksheet</li>
 					<li><input type="checkbox" class="box">Have another DP member do Post Compose check</li>
 					<li><input type="checkbox" class="box">If job has external production proofs, email production that job is approved</li>
-					<li><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Mailshop_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
+					<li><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
 				</ul>
 			</li>
-		</ul>
+      <span class="notenv_pc">
+      <li class="merge"><input type="checkbox" class="box">Save/Print Labels
+        <ul>
+          <li><input type="checkbox" class="box">Save to X and write file name on work order</li>
+          <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
+          <li class="pslabels"><input type="checkbox" class="box">Printed return address P/S labels if applicable</li>
+        </ul>
+      </li>
+			<li class="merge"><input type="checkbox" class="box">Verify the labels saved/printed correctly
+				<ul>
+					<li><input type="checkbox" class="box">Verify fields match worksheet</li>
+					<li><input type="checkbox" class="box">Check the correct number of lines in file</li>
+					<li><input type="checkbox" class="box">Check for long fields and inconsistent case</li>
+					<li><input type="checkbox" class="box">Check city for spacing and zip for placement</li>
+					<li class="foreign"><input type="checkbox" class="box">Check if ordered by country</li>
+				</ul>
+			</li>
+     </span>
+      <li class="notmerge"><input type="checkbox" class="box">Update Midnight with end date and DP status</li>
+      <li><input type="checkbox" class="box">Create PDF WO Packet
+        <ul>
+          <li><input type="checkbox" class="box">Work Order with checkmarks</li>
+          <li><input type="checkbox" class="box">Postage Statement (3602)</li>
+          <li><input type="checkbox" class="box">Qualification Report</li>
+          <li class="ndcscf"><input type="checkbox" class="box">NDC/SCF paperwork</li>
+          <li><input type="checkbox" class="box">Pallet Placards</li>
+          <li class="foreign"><input type="checkbox" class="box">Foreign WO and foreign distro report</li>
+          <li><input type="checkbox" class="box">Save and print on the color printer</li>
+          <li><input type="checkbox" class="box">Notify DP via email</li>
+        <ul>
+      </li>
+    </ul>
 	</div>
 	<div>
 		<p></p>
