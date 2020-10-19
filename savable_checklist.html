@@ -65,15 +65,14 @@
 		<ul>
 			<li><input type="checkbox" class="box">Pull up Midnight report; <a href="http://watson/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
       <li class="secure"><input type="checkbox" class="box">Add the job to the Secure Job Deletion Schedule</li>
+      <li class="fc"><input type="checkbox" class="box">If Flat, notify Warehouse to order tubs</li>
       <li class="merge"><input type="checkbox" class="box">Verify if FM or client stock
-      <span class="notsublist">
-      <li class="merge"><input type="checkbox" class="box">If Merge:
+      <li class="merge"><span class="notsublist"><input type="checkbox" class="box">If Merge:
 				<ul>
 					<li><input type="checkbox" class="box">Review all pieces, identify all merge fields</li>
 					<li><input type="checkbox" class="box">If needed, <a href="http://watson/mediawiki/index.php/Ask_String_Table" target="_blank">code ask strings</a> and LG date per WO</li>
 				</ul>
-			</li>
-    </span>
+      </span></li>
 			<li class="notsublist"><input type="checkbox" class="box">Convert data file to text (tab delimited) if needed
 				<ul>
 					<li><input type="checkbox" class="box">If .txt, select double quotes while <a href="http://watson/mediawiki/index.php/List_Loading" target="_blank">loading file</a></li>
@@ -138,7 +137,7 @@
 					<li><input type="checkbox" class="box">Reorder records by <span class="retail">zip-</span>country index</li>
 				</ul>
 			</li>
-      <li class="merge"><input type="checkbox" class="box">Create labels before sublisting if applicable</li>
+      <span class="notsublist"><li class="merge"><input type="checkbox" class="box">Create labels before sublisting if applicable</li></span>
 			<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> (domestic and foreign)</span></li>
 			<li><input type="checkbox" class="box">If static print included, email final totals to print dept</li>
       <li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>
@@ -221,7 +220,8 @@
 			</li>
       <li class="notmerge"><input type="checkbox" class="box">Save/Print Labels to X
         <ul>
-          <li><input type="checkbox" class="box">Type file name on work order</li>
+          <li><input type="checkbox" class="box">Verify output order</li>
+          <li><input type="checkbox" class="box">Save to X and write file name on work order</li>
           <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
           <li class="pslabels"><input type="checkbox" class="box">Printed return address P/S labels if applicable</li>
         </ul>
@@ -292,8 +292,7 @@
 					</li>
 				</ul>
 			</li>
-			<li class="merge"><input type="checkbox" class="box">Verify first and last records match for all pieces</li>
-      <li class="merge"><input type="checkbox" class="box">Record first and last record on work sheet</li>
+			<li class="merge"><input type="checkbox" class="box">Record first and last record on work sheet</li>
 			<li class="merge"><input type="checkbox" class="box">Generate proofs
 				<ul class="windowenv">
 					<li><input type="checkbox" class="box">If windowed envelope, create a live sample</li>
@@ -324,6 +323,7 @@
       <span class="notenv_pc">
       <li class="merge"><input type="checkbox" class="box">Save/Print Labels
         <ul>
+          <li><input type="checkbox" class="box">Verify output order</li>
           <li><input type="checkbox" class="box">Save to X and write file name on work order</li>
           <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
           <li class="pslabels"><input type="checkbox" class="box">Printed return address P/S labels if applicable</li>
