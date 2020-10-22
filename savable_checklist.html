@@ -141,8 +141,7 @@
 			<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> (domestic and foreign)</span></li>
 			<li><input type="checkbox" class="box">If static print included, email final totals to print dept</li>
       <li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>
-			<li class="retail"><input type="checkbox" class="box">Write 'No EDOC' on wo
-				<ul><li class="merge"><input type="checkbox" class="box">Reorder if needed, then create presort #</li>
+			  <ul><li class="merge"><input type="checkbox" class="box">Reorder if needed, then create presort #</li>
 				</ul>
 			</li>
 			<li class="comingle"><input type="checkbox" class="box">If <a href="http://watson/mediawiki/index.php/Comingling" target="_blank">Comingle</a>, follow wiki steps before proceeding</li>
@@ -206,6 +205,7 @@
 				</ul>
 			</li>
       <li><input type="checkbox" class="box">Save Consolidated WO and transfer checkmarks</li>
+      <li class="retail"><input type="checkbox" class="box">Write 'No EDOC' on WO
       <li class="foreign"><input type="checkbox" class="box">Save Foreign WO and transfer checkmarks</li>
 			<li><input type="checkbox" class="box">Fill out<span class="foreign"> domestic and foreign</span> label layout on work order</li>
 			<li class="notenv_pc"><input type="checkbox" class="box">Setup labels
@@ -313,7 +313,7 @@
           <li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Link FULL CSV database to InDesign</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Proofing box removed</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Review preflight window for any errors</li>
-					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Set correct imposition for paper</li>
+					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Set correct imposition for paper/bleeds</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Compose 2000 sheets at a time for normal stock, 1000 sheets for heavy stock</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Check output PDFs for errors</li>
 					<li><span class="letter"><input type="checkbox" class="box"></span> <span class="reply"><input type="checkbox" class="box"></span> <span class="env_pc"><input type="checkbox" class="box"></span>Verify first and last records with your worksheet</li>
@@ -337,17 +337,17 @@
 				</ul>
 			</li>
      </span>
-     <li><input type="checkbox" class="box">Have another DP member do Post Compose check</li>
-     <li><input type="checkbox" class="box">If job has external production proofs, email production that job is approved</li>
-     <li><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
+     <li class="merge"><input type="checkbox" class="box">Have another DP member do Post Compose check</li>
+     <li class="merge"><input type="checkbox" class="box">If job has external production proofs, email production that job is approved</li>
+     <li class="merge"><input type="checkbox" class="box"><a href="http://watson/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
       <li class="notmerge"><input type="checkbox" class="box">Update Midnight with end date and DP status</li>
       <li><input type="checkbox" class="box">Create PDF WO Packet
         <ul>
           <li><input type="checkbox" class="box">Work Order with checkmarks</li>
-          <li><input type="checkbox" class="box">Postage Statement (3602)</li>
-          <li><input type="checkbox" class="box">Qualification Report</li>
+          <li class="notretail"><input type="checkbox" class="box">Postage Statement (3602)</li>
+          <li class="notretail"><input type="checkbox" class="box">Qualification Report</li>
           <li class="ndcscf"><input type="checkbox" class="box">NDC/SCF paperwork</li>
-          <li><input type="checkbox" class="box">Pallet Placards</li>
+          <li class="notretail"><input type="checkbox" class="box">Pallet Placards</li>
           <li class="foreign"><input type="checkbox" class="box">Foreign WO and foreign distro report</li>
           <li><input type="checkbox" class="box">Save and print on the color printer</li>
           <li><input type="checkbox" class="box">Notify DP via email</li>
