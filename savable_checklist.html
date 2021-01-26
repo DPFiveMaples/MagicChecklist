@@ -138,7 +138,11 @@
 				</ul>
 			</li>
       <span class="notsublist"><li class="merge"><input type="checkbox" class="box">Create labels before sublisting if applicable</li></span>
-			<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> (domestic and foreign)</span></li>
+			<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> (domestic and foreign)</span>
+				<ul>
+          			<li class="retail"><input type="checkbox" class="box">Type None in Midnight for NDC/SCF
+        			</ul>	
+			</li>
 			<li><input type="checkbox" class="box">If static print included, email final totals to print dept</li>
       <li class="merge"><span class="clientstock"><input type="checkbox" class="box">Order client stock from warehouse</li></span>
 			<li class="merge"><span class="retail"><input type="checkbox" class="box">Reorder if needed, then create presort #</li></span>
@@ -190,12 +194,7 @@
 			</li>
 			<li class="dropselse"><input type="checkbox" class="box">Check if <a href="http://watson/mediawiki/index.php/Pallet_placards" target="_blank">pallet placards</a> are needed and print</li>
 			<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a></li>
-			<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a>
-				<ul class="notcomingle">
-					<li><input type="checkbox" class="box">Upload to Postal One</li>
-					<li><input type="checkbox" class="box">Verify upload and accuracy on USPS website</li>
-				</ul>
-			</li>
+			<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a> (do not upload yet)</li>
 			<li class="ndcscf"><input type="checkbox" class="box">If NDC/SCF:
 				<ul>
 					<li><input type="checkbox" class="box">Save 8125 form</li>
@@ -349,8 +348,14 @@
           <li class="foreign"><input type="checkbox" class="box">Foreign WO and foreign distro report</li>
           <li><input type="checkbox" class="box">Save and print on the color printer</li>
           <li><input type="checkbox" class="box">Notify DP via email</li>
-        <ul>
+        </ul>
       </li>
+	<li class="notcomingle"><input type="checkbox" class="box">After Warehouse notification
+        	<ul class="notcomingle">
+		<li><input type="checkbox" class="box">Upload to Postal One</li>
+		<li><input type="checkbox" class="box">Verify upload and accuracy on USPS website</li>
+		</ul>
+        </li>
     </ul>
 	</div>
 	<div>
