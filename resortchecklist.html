@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	Name: Resort Checklist
+	Authors: Lee Darcy
+	Date: 02/12/2021
+	Description: This is an interactive version of our Resort Checklist. It has interactive
+				checkboxes that change which items are displayed. This uses localStorage to save
+        the data in textboxes and checkboxes.
+-->
+  <title>Awesome DP Resort Checklist</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="magic_script_savable.js"></script>
+</head>
+<body onbeforeunload="return myFunction()">
+<h1>Resort Checklist</h1>
+  <div class="jobinfo">
+		Job Name:&nbsp;<textarea class="upper text" id="jobName" name="pt1" rows="1" cols="40"></textarea>&emsp;
+		Work Order:&nbsp;<textarea class="upper text" id="workOrder" name="pt2" rows="1" cols="6"></textarea>&emsp;
+		Date:&nbsp;<textarea class="upper text" id="dateDate" name="pt3" rows="1" cols="8"></textarea>
+		<br><br><br>
+	</div>
+
+	<div id="checklist">
+    <ul>
+      <li><input type="checkbox" class="box">Delete digital/recycle paper tray tags, pallet tags, postal paperwork, and pressure-sensitive labels.</li>
+      <li><input type="checkbox" class="box">Email BCC to cancel your Track N Trace job.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply to the initial email you received from BCC about<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the job.</i></li>
+      <li><input type="checkbox" class="box">If the job contains NDC/SCF mailings:
+        <ul>
+          <li><input type="checkbox" class="box">Delete digital/recycle paper NDC/SCF paperwork.</li>
+          <li><input type="checkbox" class="box">Delete all saved 8125 forms.</li>
+          <li><input type="checkbox" class="box">Delete any Output to X files.</li>
+        </ul>
+      </li>
+      <li><input type="checkbox" class="box">Cancel the Mail.dat on the USPS dashboard.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose "customer's error" for the reason.</i></li>
+      <li><input type="checkbox" class="box">Make the necessary changes to the records in Mail Manager.</li>
+      <li><input type="checkbox" class="box">If there are any foreign records, reorder the list by Country.</li>
+      <li><input type="checkbox" class="box">Resort the job using the process described below.</li>
+      <li><input type="checkbox" class="box">Save/reprint paperwork, tray tags, and pallet tags.</li>
+      <li><input type="checkbox" class="box">If the job contains NDC/SCF mailings:
+        <ul>
+          <li><input type="checkbox" class="box">Save/reprint NDC/SCF paperwork.</li>
+          <li><input type="checkbox" class="box">Save all needed 8125 forms.</li>
+          <li><input type="checkbox" class="box">Send updated NDC/SCF email to the warehouse.</li>
+        </ul>
+      </li>
+      <li><input type="checkbox" class="box">Reorder client stock from warehouse (if counts are very different or if stock has changed).</li>
+      <li><input type="checkbox" class="box">Redo Track N Trace.</li>
+      <li><input type="checkbox" class="box">Update Midnight totals and reprint the Consolidated (and Foreign) Work Order.</li>
+      <li><input type="checkbox" class="box">If a Merge job:
+        <ul>
+          <li><input type="checkbox" class="box">Verify that your first and last records have not changed.</li>
+          <li><input type="checkbox" class="box">Update example presort numbers on the last page of the Work Order.</li>
+          <li><input type="checkbox" class="box">Re-output all merge CSVs.</li>
+          <li><input type="checkbox" class="box">Open each InDesign document and go to Database > Reload to relink.</li>
+        </ul>
+      </li>
+      <li><input type="checkbox" class="box">Output files to X and verify everything is correct (our normal output to X checks).</li>
+      <li><input type="checkbox" class="box">Reprint any pressure-sensitive labels.</li>
+      <li><input type="checkbox" class="box">Spot check a few random records.</li>
+      <li><input type="checkbox" class="box">If a comingle, update Firebird with a new order form and mail.dat files. If you haven't sent the files yet, ensure those have been updated before sending.</li>
+    </ul>
+
+	<div>
+		<p></p>
+		<center>
+		<input type='button' onclick='clearBoxes(); ClearText()' value="Reset Checklist">
+		</center>
+	</div>
+	<script>
+	//https://stackoverflow.com/questions/51543302/store-multiple-checkbox-inputs-in-local-storage/51543547
+	//This script retains the checkboxes on refresh.
+	function onClickBox() {
+		var arr = $('.box').map(function() {
+			return this.checked;
+			}).get();
+			localStorage.setItem("checked", JSON.stringify(arr));
+		}
+
+		$(document).ready(function() {
+			var arr = JSON.parse(localStorage.getItem('checked')) || [];
+			arr.forEach(function(checked, i) {
+				$('.box').eq(i).prop('checked', checked);
+			});
+
+			$(".box").click(onClickBox);
+		});
+
+	//Code based on http://jsfiddle.net/arunpjohny/4EwQy/
+	//This retains the data within the textboxes on refresh.
+	if (window.localStorage) {
+	    $('.text').keyup(function () {
+	        localStorage.setItem(this.name, this.value);
+	    }).val(function () {
+	        return localStorage.getItem(this.name)
+	    })
+	}
+
+	function clearBoxes() {
+		//from https://stackoverflow.com/questions/12364007/uncheck-all-checkbox-on-pageload-using-javascript; I added localStorage.clear
+		//This resets the localStorage and clears the checkboxes.
+		localStorage.clear();
+		var w = document.getElementsByTagName('input');
+		for(var i = 0; i < w.length; i++){
+			if(w[i].type=='checkbox'){
+				w[i].checked = false;
+			}
+		}
+		location.reload();
+	}
+
+	function ClearText() {
+		//https://stackoverflow.com/questions/21332488/clear-multiple-textbox-using-javascript-on-button-click
+		//This clears the textarea boxes.
+		var elements = [] ;
+		 elements = document.getElementsByTagName("textarea");
+
+		 for(var i=0; i<elements.length ; i++){
+				elements[i].value = "" ;
+		 }
+	}
+
+	var textbox = document.getElementById('workOrder')
+		function setTitle () {
+  		document.title = textbox.value + " " + "DP Resort Checklist"
+			}
+		textbox.onkeyup = setTitle
+		textbox.onchange = setTitle
+
+	</script>
+</body>
+</html>
