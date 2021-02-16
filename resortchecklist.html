@@ -5,9 +5,7 @@
 	Name: Resort Checklist
 	Authors: Lee Darcy
 	Date: 02/12/2021
-	Description: This is an interactive version of our Resort Checklist. It has interactive
-	checkboxes that change which items are displayed. This uses localStorage to save
-        the data in textboxes and checkboxes.
+	Description: This is an interactive version of our Resort Checklist. This DOES NOT use localStorage to save the data in textboxes and checkboxes.
 -->
   <title>Awesome DP Resort Checklist</title>
 	<link rel="stylesheet" href="styles.css">
@@ -70,58 +68,7 @@
 		</center>
 	</div>
 	<script>
-	//https://stackoverflow.com/questions/51543302/store-multiple-checkbox-inputs-in-local-storage/51543547
-	//This script retains the checkboxes on refresh.
-	function onClickResortBox() {
-		var arr = $('.box').map(function() {
-			return this.checked;
-			}).get();
-			localStorage.setItem("checked", JSON.stringify(arr));
-		}
-
-		$(document).ready(function() {
-			var arr = JSON.parse(localStorage.getItem('checked')) || [];
-			arr.forEach(function(checked, i) {
-				$('.box').eq(i).prop('checked', checked);
-			});
-
-			$(".box").click(onClickResortBox);
-		});
-
-	//Code based on http://jsfiddle.net/arunpjohny/4EwQy/
-	//This retains the data within the textboxes on refresh.
-	if (window.localStorage) {
-	    $('.text').keyup(function () {
-	        localStorage.setItem(this.name, this.value);
-	    }).val(function () {
-	        return localStorage.getItem(this.name)
-	    })
-	}
-
-	function clearBoxes() {
-		//from https://stackoverflow.com/questions/12364007/uncheck-all-checkbox-on-pageload-using-javascript; I added localStorage.clear
-		//This resets the localStorage and clears the checkboxes.
-		localStorage.clear();
-		var w = document.getElementsByTagName('input');
-		for(var i = 0; i < w.length; i++){
-			if(w[i].type=='checkbox'){
-				w[i].checked = false;
-			}
-		}
-		location.reload();
-	}
-
-	function ClearText() {
-		//https://stackoverflow.com/questions/21332488/clear-multiple-textbox-using-javascript-on-button-click
-		//This clears the textarea boxes.
-		var elements = [] ;
-		 elements = document.getElementsByTagName("textarea");
-
-		 for(var i=0; i<elements.length ; i++){
-				elements[i].value = "" ;
-		 }
-	}
-
+	
 	var textbox = document.getElementById('workOrder')
 		function setTitle () {
   		document.title = textbox.value + " " + "DP Resort Checklist"
