@@ -14,7 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="magic_script_savable.js"></script>
 </head>
-<body onbeforeunload="return myFunctionII()">
+<body onbeforeunload="return myFunction()">
 <h1>Resort Checklist</h1>
   	<div class="resortinfo">
 		Job Name:&nbsp;<textarea class="upper text" id="clientName" name="pt1" rows="1" cols="40"></textarea>&emsp;
@@ -72,29 +72,29 @@
 	<script>
 	//https://stackoverflow.com/questions/51543302/store-multiple-checkbox-inputs-in-local-storage/51543547
 	//This script retains the checkboxes on refresh.
-	function onClickBoxII() {
-		var arr = $('.box').map(function() {
+	function onClickBox() {
+		var arr = $('.box-resort').map(function() {
 			return this.checked;
 			}).get();
-			localStorage.setItem("checkedII", JSON.stringify(arr));
+			localStorage.setItem("checked", JSON.stringify(arr));
 		}
 
 		$(document).ready(function() {
-			var arr = JSON.parse(localStorage.getItem('checkedII')) || [];
+			var arr = JSON.parse(localStorage.getItem('checked')) || [];
 			arr.forEach(function(checked, i) {
-				$('.box').eq(i).prop('checkedII', checked);
+				$('.box-resort').eq(i).prop('checked', checked);
 			});
 
-			$(".box").click(onClickBoxII);
+			$(".box-resort").click(onClickBox);
 		});
 
 	//Code based on http://jsfiddle.net/arunpjohny/4EwQy/
 	//This retains the data within the textboxes on refresh.
 	if (window.localStorage) {
-	    $('.text').keyup(function () {
-	        localStorage.setItem(this.nameII, this.valueII);
+	    $('.resort-text').keyup(function () {
+	        localStorage.setItem(this.name, this.value);
 	    }).val(function () {
-	        return localStorage.getItem(this.nameII)
+	        return localStorage.getItem(this.name)
 	    })
 	}
 
