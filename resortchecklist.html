@@ -76,13 +76,13 @@
 		var arr = $('.box').map(function() {
 			return this.checked;
 			}).get();
-			localStorage.setItem("checked", JSON.stringify(arr));
+			localStorage.setItem("checkedII", JSON.stringify(arr));
 		}
 
 		$(document).ready(function() {
-			var arr = JSON.parse(localStorage.getItem('checked')) || [];
+			var arr = JSON.parse(localStorage.getItem('checkedII')) || [];
 			arr.forEach(function(checked, i) {
-				$('.box').eq(i).prop('checked', checked);
+				$('.box').eq(i).prop('checkedII', checked);
 			});
 
 			$(".box").click(onClickBoxII);
@@ -92,7 +92,7 @@
 	//This retains the data within the textboxes on refresh.
 	if (window.localStorage) {
 	    $('.text').keyup(function () {
-	        localStorage.setItem(this.nameII, this.value);
+	        localStorage.setItem(this.nameII, this.valueII);
 	    }).val(function () {
 	        return localStorage.getItem(this.nameII)
 	    })
