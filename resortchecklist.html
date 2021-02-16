@@ -72,8 +72,8 @@
 	<script>
 	//https://stackoverflow.com/questions/51543302/store-multiple-checkbox-inputs-in-local-storage/51543547
 	//This script retains the checkboxes on refresh.
-	function onClickBox() {
-		var arr = $('.box-resort').map(function() {
+	function onClickResortBox() {
+		var arr = $('.box').map(function() {
 			return this.checked;
 			}).get();
 			localStorage.setItem("checked", JSON.stringify(arr));
@@ -82,10 +82,10 @@
 		$(document).ready(function() {
 			var arr = JSON.parse(localStorage.getItem('checked')) || [];
 			arr.forEach(function(checked, i) {
-				$('.box-resort').eq(i).prop('checked', checked);
+				$('.box').eq(i).prop('checked', checked);
 			});
 
-			$(".box-resort").click(onClickBox);
+			$(".box").click(onClickResortBox);
 		});
 
 	//Code based on http://jsfiddle.net/arunpjohny/4EwQy/
