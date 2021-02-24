@@ -21,24 +21,30 @@
   </div>
   <div id="resortchecklist">
     <ul>
-      <li><input type="checkbox">Delete digital/recycle paper tray tags, pallet tags, postal paperwork, and pressure-sensitive labels.</li>
-      <li><input type="checkbox">Email BCC to cancel your Track N Trace job.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply to the initial email you received from BCC about<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the job.</i></li>
+      <li><input type="checkbox">Delete Output to X.</li>
+      <li><input type="checkbox">Delete digital/recycle paper:
+        <ul>
+          <li><input type="checkbox">Qualification Report</li>
+          <li><input type="checkbox">Postage Statement</li>
+          <li><input type="checkbox">Tray tags</li>
+          <li><input type="checkbox">Pallet Tags</li>
+          <li><input type="checkbox">Pressure-sensitive labels</li>
+        </ul>
+      <li><input type="checkbox">Email BCC to cancel your Track N Trace job.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply to the initial email you received from BCC about the job.</i></li>
       <li><input type="checkbox">If the job contains NDC/SCF mailings:
         <ul>
           <li><input type="checkbox">Delete digital/recycle paper NDC/SCF paperwork.</li>
-          <li><input type="checkbox">Delete all saved 8125 forms.</li>
           <li><input type="checkbox">Delete any Output to X files.</li>
         </ul>
       </li>
       <li><input type="checkbox">Cancel the Mail.dat on the USPS dashboard.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose "customer's error" for the reason.</i></li>
       <li><input type="checkbox">Make the necessary changes to the records in Mail Manager.</li>
-      <li><input type="checkbox">If there are any foreign records, reorder the list by Country.</li>
-      <li><input type="checkbox">Resort the job using the process described below.</li>
-      <li><input type="checkbox">Save/reprint paperwork, tray tags, and pallet tags.</li>
+      <li><input type="checkbox">If foreign records present, reorder the list by Country.</li>
+      <li><input type="checkbox">Resort the job.</li>
+      <li><input type="checkbox">Save/reprint postal paperwork, tray tags, and pallet tags.</li>
       <li><input type="checkbox">If the job contains NDC/SCF mailings:
         <ul>
           <li><input type="checkbox">Save/reprint NDC/SCF paperwork.</li>
-          <li><input type="checkbox">Save all needed 8125 forms.</li>
           <li><input type="checkbox">Send updated NDC/SCF email to the warehouse.</li>
         </ul>
       </li>
@@ -53,14 +59,14 @@
           <li><input type="checkbox">Open each InDesign document and go to Database > Reload to relink.</li>
         </ul>
       </li>
-      <li><input type="checkbox">Output files to X and verify everything is correct (our normal output to X checks).</li>
+      <li><input type="checkbox">Output files to X and verify everything is correct (normal output to X checks).</li>
       <li><input type="checkbox">Reprint any pressure-sensitive labels.</li>
       <li><input type="checkbox">Spot check a few random records.</li>
       <li><input type="checkbox">If a comingle, update Firebird with a new order form and mail.dat files. If you haven't sent the files yet, ensure those have been updated before sending.</li>
     </ul>
 
 	<script>
-	
+
 	var textbox = document.getElementById('workOrderNum')
 		function setTitle () {
   		document.title = textbox.value + " " + "DP Resort Checklist"
