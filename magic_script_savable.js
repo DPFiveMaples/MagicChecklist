@@ -432,6 +432,22 @@ $(document).ready(function(){
 		 $(".notsublist").show();
 	 };
 
+	 /*Strikethrough*/
+	 /*From https://forum.jquery.com/topic/save-a-toogle-state-to-local-storage */
+	 var strikeClicked = JSON.parse(localStorage.strike || "[]")
+		$(".strikeIt").click(function() {
+			$(this).toggleClass("striked");
+			localStorage.strike = JSON.stringify(
+			$(".strikeIt").map(function(){
+				return $(this).hasClass("striked")
+			}).get()
+			)
+		});
+
+		if (strikeClicked.length)
+			$(".strikeIt").each(function(i) {
+				$(this).toggleClass("striked", strikeClicked[i])
+		});
 
 	/* Import Table Stuff */
 	$("#addlistbtn").click(function(){
@@ -453,6 +469,7 @@ $(document).ready(function(){
    });
 
 });
+
 
 function myFunction() {
     return "Are you sure you want to leave?";
