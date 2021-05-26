@@ -83,7 +83,7 @@
 	<span class="notsublist">
         <li class="merge"><input type="checkbox" class="box">If merge, compare random records to original data file</li>
 	<li><input type="checkbox" class="box">Go through standard <a href="http://watson/mediawiki/index.php/Selects" target="_blank">selects</a> and mark on worksheet</li>
-	<li class="merge"><input type="checkbox" class="box">If merge with salutation, run "Bad Salutation" select</li>
+	<li class="merge"><input type="checkbox" class="box"><span class="strikeIt">If merge with salutation, run "Bad Salutation" select</span></li>
     	</span>
 	<li class="foreign"><input type="checkbox" class="box">If foreign records:
 		<ul>
@@ -126,7 +126,7 @@
 			<li><input type="checkbox" class="box">Mark total duplicates hidden on worksheet</li>
 			<li><input type="checkbox" class="box">Save "post-dedupe" distribution report</li>
 			<li><input type="checkbox" class="box">Flag hidden records DUPE</li>
-			<li><input type="checkbox" class="box">Remove suppression files if applicable</li>
+			<li><input type="checkbox" class="box"><span class="strikeIt">Remove suppression files if applicable</span></li>
 			<li><input type="checkbox" class="box">Write final totals for dom. and for. on worksheet</li>
 		</ul>
 	</li>
@@ -138,7 +138,7 @@
 			<li><input type="checkbox" class="box">Reorder records by <span class="retail">zip-</span>country index</li>
 		</ul>
 	</li>
-	<li><input type="checkbox" class="box"><span class="strikeIt">Create labels before sublisting if applicable</span></li>
+	<li class=""notsublist"><input type="checkbox" class="box"><span class="strikeIt">Create labels before sublisting if applicable</span></li>
 	<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> domestic and foreign</span></li>
 	<li class="fc"><input type="checkbox" class="box">Type None in Midnight for NDC/SCF</li>
 	<li><input type="checkbox" class="box"><span class="strikeIt">Email final totals to print department if applicable</span></li>
@@ -148,7 +148,6 @@
 			<li class="merge"><input type="checkbox" class="box"><span class="strikeIt">If merge, reorder if needed, then create presort #</span></li>
 		</ul>
 	</li>
-	<li class="merge"><span class="retail"><input type="checkbox" class="box">Reorder if needed, then create presort #</li></span>
 	<li class="comingle"><input type="checkbox" class="box">If <a href="http://watson/mediawiki/index.php/Comingling" target="_blank">Comingle</a>, follow wiki steps before proceeding</li>
 	<li class="notretail"><input type="checkbox" class="box">Postal sort
 		<ul>
@@ -167,8 +166,8 @@
 	<li class="dropselse"><input type="checkbox" class="box">Enter the zip code for where the job is dropping</li>
 	<li class="notcomingle notdropselse notfc"><input type="checkbox" class="box">Check box for <a href="http://watson/mediawiki/index.php/NDC/SCF" target="_blank">NDC or SCF</a>
 		<ul>
-			<li><span class="strikeIt"><input type="checkbox" class="box">If not profitable, type None in Midnight</span></li>
-			<li><span class="strikeIt"><input type="checkbox" class="box">If profitable, type location in Midnight & save</span></li>
+			<li><input type="checkbox" class="box"><span class="strikeIt">If not profitable, type None in Midnight</span></li>
+			<li><input type="checkbox" class="box"><span class="strikeIt">If profitable, type location in Midnight & save</span></li>
 		</ul>
 	</li>
 	</ul></li>
@@ -195,7 +194,12 @@
 	</li>
 	<li class="notretail notcomingle"><input type="checkbox" class="box">Save pallet placards</li>
 	<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a></li>
-	<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a> (do not upload yet)</li>
+	<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a> (do not upload yet)
+		<ul>
+			<li class="notndcscf"><input type="checkbox" class="box">Verify EInduction & FAST information boxes blank</li>
+			<li class="ndcscf"><input type="checkbox" class="box">Check EInduction box and include FAST information</li>
+		</ul>
+	</li>
         <li class="ndcscf"><input type="checkbox" class="box">Send NDC/SCF email to warehouse:
 		<ul>
 			<li><input type="checkbox" class="box">Request FAST information</li>

@@ -263,19 +263,23 @@ $(document).ready(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('ndcscfchecked',true);
 			 $(".ndcscf").show();
+		$(".notndcscf").hide();
 		}
 	});
 	$("#NDCSCFCheck").change(function(){
 		if(!$(this).is(":checked")) {
 			localStorage.removeItem('ndcscfchecked');
 		 $(".ndcscf").hide();
+	$(".notndcscf").show();
 		}
 	});
 	var ndcscf_checked = localStorage.getItem("ndcscfchecked");
 	 if (ndcscf_checked){
 		 $(".ndcscf").show();
+		 $(".notndcscf").hide();
 	 }	else {
 		 $(".ndcscf").hide();
+		 $(".notndcscf").show();
 	 };
 
 /*PSLabels*/
