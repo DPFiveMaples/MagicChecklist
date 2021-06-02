@@ -1,200 +1,154 @@
 @media print {
-    #selectstable {page-break-before: always;}
-}
-
-body {
-	font-family: Calibri, sans-serif;
-	font-size: 11pt;
-	/*width: 95%;*/
-	max-width: 800px;
-	margin: auto;
-	padding-bottom: 50px;
-}
-
-h1{
-	text-align: center;
-	font-size: 21pt;
-
-}
-
-li {
-	list-style-type: none;
-
-}
-
-fieldset {
-	margin-bottom: 30px;
-}
-
-#jobfeatures {
-    -webkit-column-count:4;
-    -moz-column-count: 4;
-    column-count: 4;
-	height: 100px;
-	float: center;
-}
-
-#checklist {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-}
-
-ul {
-	-webkit-margin-before: 0px;
-	margin-top: 0px;
-	padding-left: 30px;
-
+  #selectstable {
+    page-break-before: always;
+  }
 }
 
 .jobinfo {
-	text-align: center;
+  text-align: center;
 }
 
-/** **/
+textarea {
+  font-family: Calibri, sans-serif;
+  font-size: 10pt;
+}
+
+body {
+  font-family: Calibri, sans-serif;
+  font-size: 11pt;
+  max-width: 800px;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 21pt;
+}
+
+caption,
+.caption {
+  text-align: left;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+
+/* Worksheet - leftfloatgroup (Imported Fields Section) */
+
+.leftfloatgroup {
+  float: left;
+  min-width: 65%;
+}
+
+#loadlist {
+  border: 1px solid black;
+  padding: 10px;
+  min-width: 400px;
+}
+
+#importtable,#mergetable, #tritable {
+  border-collapse: collapse;
+}
+
+#importtable th, #mergetable th, #tritable th {
+  text-align: left;
+  border: 1px solid black;
+  padding: 2px;
+  width: 107px;
+  height: 20px;
+}
+
+#importtable td, #mergetable td, #tritable td {
+  border: 1px solid black;
+  padding: 0px;
+  max-width: 47px;
+  text-align: center;
+}
+
+#mergetable td:last-of-type {
+  width:47px;
+}
+
+.listlabel {
+  height: 95px;
+  vertical-align: bottom;
+}
+
+.listname {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  display: block;
+  transform-origin: 17px 15px;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.smallfont {
+  font-size: 9pt;
+}
+
+
+/* Worksheet - rightfloatgroup */
+
+.rightfloatgroup {
+  float: right;
+  min-width: 25%;
+}
+
+#notestable {
+  border: 1px solid black;
+  padding: 5px;
+  max-width: 250px;
+  min-width: 221px;
+}
+
+#ncoatable, #dedupetable {
+  border: 1px solid black;
+  padding: 5px;
+  max-width: 250px;
+  min-width: 221px;
+  margin-top: 10px;
+}
+
+
+/* Worksheet - bottomfloatgroup */
+
+.bottomfloatgroup {
+  min-width: 95%;
+}
+
 #selectstable td:nth-child(2) {
-	padding-right: 15px;
+  padding-right: 15px;
 }
 
-caption, .caption{
-	text-align: left;
-	font-weight: bold;
-	font-size: 12pt;
+#selectstable {
+  border: 1px solid black;
+  padding: 5px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
 }
 
-.striked{
-  text-decoration: line-through  
+#totalstable {
+  border: 1px solid black;
+  padding: 5px;
+  width: 48%;
+  max-width: 220px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  float: left;
 }
 
-#selectstable{
-	border: 1px solid black;
-	padding: 5px;
-	width: 100%;
-	max-width: 800px;
-	margin-top: 20px;
-}
-
-#totalstable{
-	border: 1px solid black;
-	padding: 5px;
-	width: 48%;
-	max-width: 220px;
-	margin-top: 20px;
-	margin-bottom: 50px;
-	float: left;
-}
-#ncoatable, #dedupetable{
-	border: 1px solid black;
-	padding: 5px;
-	max-width: 250px;
-	min-width: 221px;
-	margin-top: 10px;
-
-}
-/*#dedupetable{
-	border: 1px solid black;
-	padding: 5px;
-	max-width: 250px;
-	min-width: 200px;
-	margin-top: 20px;
-}*/
-#proofstable{
-	border: 1px solid black;
-	padding: 5px;
-	width: 33%;
-	max-width: 250px;
-	margin-top: 20px;
-}
-#notestable{
-	border: 1px solid black;
-	padding: 5px;
-	max-width: 250px;
-	min-width: 221px;
-
-
-}
-#timestable{
-	border: 1px solid black;
-	padding: 5px;
-	width: 48%;
-	max-width: 200px;
-	margin-top: 20px;
-	margin-bottom: 50px;
-	float: right;
-
-
-}
-
-/** **/
-#importtable, #tritable{
-	border-collapse: collapse;
-}
-
-#importtable th, #tritable th{
-	text-align: left;
-	border: 1px solid black;
-	padding: 2px;
-	width: 107px;
-	height: 20px;
-}
-
-#importtable td{
-	border: 1px solid black;
-	padding: 0px;
-	max-width: 47px;
-	text-align: center;
-}
-#tritable td{
-	border: 1px solid black;
-	padding: 0px;
-	width: 47px;
-	text-align: center;
- }
-
-.listlabel{
-	height: 95px;
-	vertical-align: bottom;
-}
-
-.listname{
-	-webkit-transform: rotate(-90deg);
-	-moz-transform: rotate(-90deg);
-	display: block;
-	transform-origin:17px 15px;
-}
-
-textarea{
-	font-family: Calibri, sans-serif;
-	font-size: 10pt;
-}
-
-.smallfont{
-	font-size: 9pt;
-}
-
-.nopadding{
- padding: 0 !important;
- margin: 0 !important;
-}
-
-.tabspace{
-	width: 10px;
-}
-
-#loadlist{
-	border: 1px solid black;
-	padding: 10px;
-	min-width: 400px;
-
-}
-.leftfloatgroup{
-		float: left;
-		min-width: 65%;
-}
-.rightfloatgroup{
-		float: right;
-		min-width: 25%
-}
-.bottomfloatgroup{
-		min-width: 95%;
+#timestable {
+  border: 1px solid black;
+  padding: 5px;
+  width: 48%;
+  max-width: 200px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  float: right;
 }
