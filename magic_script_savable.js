@@ -1,5 +1,5 @@
 $(document).ready(function(){
-/*hide "extras" from the start*/
+/* hide "extras" from the start */
 	$(".foreign").hide();
 	$(".secure").hide();
 	$(".retail").hide();
@@ -19,9 +19,9 @@ $(document).ready(function(){
 	$(".sublist").hide();
 
 
-/*checkbox conditions*/
+/* checkbox conditions */
 
-/*Secure*/
+/* Secure */
 	$("#SecureCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('securechecked',true);
@@ -45,7 +45,7 @@ $(document).ready(function(){
 		 $(".notsecure").show();
 	 };
 
-/*Merge*/
+/* Merge */
 		$("#MergeCheck").change(function(){
 			if($(this).is(":checked")) {
 				localStorage.setItem('mergechecked',true);
@@ -69,7 +69,7 @@ $(document).ready(function(){
 			 $(".notmerge").show();
 		 };
 
-/*Merge - Letter*/
+/* Merge - Letter */
 	$("#LetterCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('letterchecked',true);
@@ -95,7 +95,7 @@ $(document).ready(function(){
 	 };
 
 
-/*Merge - Reply*/
+/* Merge - Reply */
 	$("#ReplyCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('replychecked',true);
@@ -120,7 +120,7 @@ $(document).ready(function(){
 		 $(".reply").hide();
 	};
 
-/*Merge - Env_PC*/
+/* Merge - Env_PC */
 	$("#Env_PCCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('env_pcchecked',true);
@@ -149,7 +149,7 @@ $(document).ready(function(){
 		 $(".notenv_pc").show();
 	 };
 
-/*Foreign*/
+/* Foreign */
 	$("#ForeignCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('foreignchecked',true);
@@ -169,7 +169,7 @@ $(document).ready(function(){
 		 $(".foreign").hide();
 	 };
 
-/*NCOA*/
+/* NCOA */
 	 $("#NCOACheck").change(function(){
 		 if($(this).is(":checked")) {
 			 localStorage.setItem('ncoachecked',true);
@@ -189,7 +189,7 @@ $(document).ready(function(){
  			$(".NCOA").hide();
  		};
 
-/*DeDupe*/
+/* DeDupe */
 	$("#DeDupeCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('dedupechecked',true);
@@ -209,7 +209,7 @@ $(document).ready(function(){
 		 $(".dedupe").hide();
 	 };
 
- /*FC*/
+ /* FC */
  $("#FCCheck").change(function(){
  	if($(this).is(":checked")) {
  		localStorage.setItem('fcchecked',true);
@@ -233,7 +233,7 @@ $(document).ready(function(){
 	 $(".notfc").show();
   };
 
-/*Retail*/
+/* Retail */
 	$("#RetailCheck").change(function(){
   	if($(this).is(":checked")) {
   		localStorage.setItem('retailchecked',true);
@@ -258,7 +258,7 @@ $(document).ready(function(){
 		 $(".notretail").show();
    };
 
-/*NDCSCF*/
+/* NDCSCF */
 	$("#NDCSCFCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('ndcscfchecked',true);
@@ -282,7 +282,7 @@ $(document).ready(function(){
 		 $(".notndcscf").show();
 	 };
 
-/*PSLabels*/
+/* PSLabels */
 	$("#PSLabelsCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('pslableschecked',true);
@@ -302,7 +302,7 @@ $(document).ready(function(){
 		 $(".pslabels").hide();
 	 };
 
-/*ClientStock*/
+/* ClientStock */
 	$("#ClientStockCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('clientstockchecked',true);
@@ -326,7 +326,7 @@ $(document).ready(function(){
 		 $(".fmstock").show();
 	 };
 
-/*DropsElse*/
+/* DropsElse */
 	$("#DropsElseCheck").click(function(){
 	if($("#DropsElseCheck").is(":checked")){
 		$(".dropselse").show();
@@ -360,7 +360,7 @@ $(document).ready(function(){
 		 $(".notdropselse").show();
 	 };
 
-/*Comingle*/
+/* Comingle */
 	$("#ComingleCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('cominglechecked',true);
@@ -384,7 +384,7 @@ $(document).ready(function(){
 		 $(".notcomingle").show();
 	 };
 
-/*WindowEnv*/
+/* WindowEnv */
 	$("#WindowEnvCheck").click(function(){
 	if($("#WindowEnvCheck").is(":checked")){
 		$(".windowenv").show();
@@ -412,7 +412,7 @@ $(document).ready(function(){
 		 $(".windowenv").hide();
  	};
 
-/*Sublist*/
+/* Sublist */
 	$("#SublistCheck").change(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('sublistchecked',true);
@@ -436,8 +436,8 @@ $(document).ready(function(){
 		 $(".notsublist").show();
 	 };
 
-	 /*Strikethrough*/
-	 /*From https://forum.jquery.com/topic/save-a-toogle-state-to-local-storage */
+	 /* Strikethrough */
+	 /* From https://forum.jquery.com/topic/save-a-toogle-state-to-local-storage */
 	 var strikeClicked = JSON.parse(localStorage.strike || "[]")
 		$(".strikeIt").click(function() {
 			$(this).toggleClass("striked");
@@ -454,7 +454,7 @@ $(document).ready(function(){
 		});
 
 	/* Import Table Stuff */
-	$("#addlistbtn").click(function(){
+	/* $("#addlistbtn").click(function(){
 		$("#importtable .fieldlabel").each(function(){
 		$(this).append('<td><input type="checkbox"/></td>');
 		});
@@ -468,9 +468,8 @@ $(document).ready(function(){
    	$("#addfieldbtn").click(function(){
 		$("#importtable").each(function(){
 		$(this).append('<tr class="fieldlabel"><th class="nopadding"><textarea rows="1" cols="13"></textarea></th></tr>');
-
 	});
-   });
+}); */
 
 });
 
