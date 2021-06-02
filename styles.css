@@ -59,15 +59,18 @@ caption,
   height: 20px;
 }
 
-#importtable td, #mergetable td, #tritable td {
+#importtable td {
   border: 1px solid black;
   padding: 0px;
   max-width: 47px;
   text-align: center;
 }
 
-#mergetable td:last-of-type {
-  width:47px;
+#mergetable td, #tritable td {
+  border: 1px solid black;
+  padding: 0px;
+  width: 47px;
+  text-align: center;
 }
 
 .listlabel {
