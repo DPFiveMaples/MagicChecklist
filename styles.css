@@ -26,6 +26,40 @@ h1 {
   font-size: 21pt;
 }
 
+/* checklist */
+fieldset{
+  margin-bottom: 30px;
+}
+
+#jobfeatures {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  height: 100 px;
+  float: center;
+}
+
+#checklist {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-coutn: 2;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  -webkit-margin-before: 0px;
+  margin-top: 0px;
+  padding-left: 30px;
+}
+
+.striked{
+  text-decoration: line-through
+}
+
+/* Worksheet */
 caption,
 .caption {
   text-align: left;
