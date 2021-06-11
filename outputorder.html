@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+	Name: Output Order Selector
+	Author: Lee Darcy 6/0/2021
+	Description: This is a dynamic form to make selecting the output order of merge
+  files easier.
+-->
+
+
+<title>Awesome Output Order Selector</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="magic_script_savable.js"></script>
+</head>
+<h1>Output Order Selector</h1>
+<br><br>
+
+<div class="jobinfo">
+<form action="/output_order.php" id="outputorderform">
+  <label for="work_order">Work Order:</label>
+  <input type="text" id="work_order" name="work_order">
+  <input type="submit">
+</form>
+</div>
+<br><br>
+
+<label for="envelopes">Envelope:</label>
+<select name="envelopes" id="envelopes" form="outputorderform">
+  <option value="env_buskro" selected>Buskro</option>
+  <option value="env_printdept">Print Dept</option>
+  <option value="env_windowed">Windowed</option>
+</select>
+<br><br>
+
+<label for="letters">Letter:</label>
+<select name="letters" id="letters" form="outputorderform">
+  <option value="lett_letter" selected>Letter Fold</option>
+  <option value="lett_zfold">Z Fold</option>
+  <option value="lett_half">Half Fold</option>
+  <option value="lett_double">Double Parallel</option>
+  <option value="lett_no">No Fold</option>
+</select>
+<br><br>
+
+<label for="replies">Remit/Reply Form:</label>
+<select name="replies" id="replies" form="outputorderform">
+  <option value="rep_Letter">Letter Fold</option>
+  <option value="rep_zfold">Z Fold</option>
+  <option value="rep_half">Half Fold</option>
+  <option value="rep_no" selected>No Fold</option>
+  <option value="rep_buskro">No Fold, Buskro print</option>
+  <option value="rep_none">No Remit/Reply</option>
+</select>
+<br><br>
+
+<label for="inserter">Inserted:</label>
+<select name="inserter" id="inserter" form="outputorderform">
+  <option value="ins_mach" selected>Machine Inserted</option>
+  <option value="ins_hand">Hand Inserted</option>
+  <option value="ins_no">Not Inserted (return flat)</option>
+</select>
+<br><br>
+
+<label for="finalorder">Final Output Order:</label>
+<select name="finalorder" id="finalorder" form="outputorderform">
+  <option value="fin_whatever" selected>Doesn't matter</option>
+  <option value="fin_fwd">FWD (A-Z, 1-100)</option>
+</select>
+<br><br> 
+
+</html>
