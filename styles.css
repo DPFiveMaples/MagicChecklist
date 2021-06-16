@@ -189,3 +189,10 @@ caption,
   margin-bottom: 50px;
   float: right;
 }
+
+/* Output Order */
+#order {
+  float: right;
+  font-weight: bold;
+  font-size: 20pt;
+}
