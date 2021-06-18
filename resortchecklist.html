@@ -10,6 +10,7 @@
   <title>Awesome DP Resort Checklist</title>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="magic_script_savable.js"></script>
 </head>
 
 <h1>Resort Checklist</h1>
@@ -21,24 +22,40 @@
   </div>
   <div id="resortchecklist">
     <ul>
-      <li><input type="checkbox">Delete Output to X.</li>
+      <li><input type="checkbox"><span class="strikeIt">Delete Output to X.</scan></li>
       <li><input type="checkbox">Delete digital/recycle paper:
         <ul>
           <li><input type="checkbox">Qualification Report</li>
           <li><input type="checkbox">Postage Statement</li>
           <li><input type="checkbox">Tray tags</li>
           <li><input type="checkbox">Pallet Tags</li>
-          <li><input type="checkbox">Pressure-sensitive labels</li>
+          <li><input type="checkbox"><span class="strikeIt">Pressure-sensitive labels</span></li>
         </ul>
       <li><input type="checkbox">Email BCC to cancel your Track N Trace job.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply to the initial email you received from BCC about the job.</i></li>
-      <li><input type="checkbox">If the job contains NDC/SCF mailings:
+      <li><input type="checkbox">Delete Track N Trace screenshot.</li>
+      <li><input type="checkbox"><span class="strikeIt">If the job contains NDC/SCF mailings:</span>
         <ul>
           <li><input type="checkbox">Delete digital/recycle paper NDC/SCF paperwork.</li>
         </ul>
       </li>
       <li><input type="checkbox">Make the necessary changes to the records in Mail Manager.</li>
       <li><input type="checkbox">If foreign records present, reorder the list by Country.</li>
-      <li><input type="checkbox">Resort the job.</li>
+      <li><input type="checkbox">Resort the job.
+        <ul>
+          <li><input type="checkbox" class="box">Correct select for sort <span class="foreign">(Foreign or no Foreign?)</span></li>
+          <li><input type="checkbox" class="box">Select Class and Category from work order</li>
+          <li><input type="checkbox" class="box">Verify weight is in Midnight</li>
+          <li><input type="checkbox" class="box">Verify piece thickness is in Midnight</li>
+          <li><input type="checkbox" class="box"><span class="strikeIt">If not #10, verify l and w is in Midnight</span></li>
+          <li><input type="checkbox" class="box"><span class="strikeIt">Select appropriate tray options if applicable</span></li>
+          <li><input type="checkbox" class="box">Select postage type
+            <ul>
+              <li><input type="checkbox" class="box"><span class="strikeIt">If permit, use one permit and verify indicia</span></li>
+              <li><input type="checkbox" class="box"><span class="strikeIt">If precancelled stamp, select addt'l permit</span></li>
+            </ul>
+          </li>
+        </ul>
+        </li>
       <li><input type="checkbox">Save/reprint postal paperwork, tray tags, and pallet tags.</li>
       <li><input type="checkbox">If the job contains NDC/SCF mailings:
         <ul>
@@ -48,20 +65,25 @@
       </li>
       <li><input type="checkbox">Reorder client stock from warehouse (if counts are very different or if stock has changed).</li>
       <li><input type="checkbox">Redo Track N Trace.</li>
+      <ul>
+        <li><input type="checkbox">Recapture Track N Trace screenshot.</li>
+      </ul>
       <li><input type="checkbox">Recreate Mail.dat.</li>
       <li><input type="checkbox">Update Midnight totals and reprint the Consolidated (and Foreign) Work Order.</li>
-      <li><input type="checkbox">If a Merge job:
+      <li><input type="checkbox"><span class="StrikeIt">If a Merge job:</span>
         <ul>
-          <li><input type="checkbox">Verify that your first and last records have not changed.</li>
-          <li><input type="checkbox">Update example presort numbers on the last page of the Work Order.</li>
+          <li><input type="checkbox"><span class="strikeIt">If doing an envelope/postcard merge, re-mark USPS fields.</span></li>
           <li><input type="checkbox">Re-output all merge CSVs.</li>
           <li><input type="checkbox">Open each InDesign document and go to Database > Reload to relink.</li>
+          <li><input type="checkbox">Verify that your first and last records have not changed.</li>
+          <li><input type="checkbox">Update example presort numbers on the last page of the Work Order.</li>
         </ul>
       </li>
       <li><input type="checkbox">Output files to X and verify everything is correct (normal output to X checks).</li>
+      <li><input type="checkbox">Re-mark IMB fields.</li>
       <li><input type="checkbox">Reprint any pressure-sensitive labels.</li>
       <li><input type="checkbox">Spot check a few random records.</li>
-      <li><input type="checkbox">If a comingle, update Firebird with a new order form and mail.dat files. If you haven't sent the files yet, ensure those have been updated before sending.</li>
+      <li><input type="checkbox">Reoutput Final Mail File.</li>
     </ul>
 
 	<script>
