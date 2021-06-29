@@ -190,6 +190,16 @@ caption,
   float: right;
 }
 
+/* Resort Checklist */
+.resortinfo {
+  text-align: center;
+}
+
+/* Post Compose Checklist */
+.pcinfo {
+  text-align: center;
+}
+
 /* Output Order */
 #order {
   float: right;
