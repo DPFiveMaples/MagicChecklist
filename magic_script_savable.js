@@ -14,7 +14,7 @@ $(document).ready(function(){
 	$(".letter").hide();
 	$(".reply").hide();
 	$(".env_pc").hide();
-	$(".comingle").hide();
+	$(".pulls").hide();
 	$(".dropselse").hide();
 	$(".sublist").hide();
 
@@ -360,28 +360,28 @@ $(document).ready(function(){
 		 $(".notdropselse").show();
 	 };
 
-/* Comingle */
-	$("#ComingleCheck").change(function(){
+/* Pulls */
+	$("#PullCheck").change(function(){
 		if($(this).is(":checked")) {
-			localStorage.setItem('cominglechecked',true);
-			 $(".comingle").show();
-		 $(".notcomingle").hide();
+			localStorage.setItem('pullchecked',true);
+			 $(".pull").show();
+		 $(".notpull").hide();
 		}
 	});
-	$("#ComingleCheck").change(function(){
+	$("#PullCheck").change(function(){
 		if(!$(this).is(":checked")) {
-			localStorage.removeItem('cominglechecked');
-		 $(".comingle").hide();
-	 $(".notcomingle").show();
+			localStorage.removeItem('pullchecked');
+		 $(".pull").hide();
+	 $(".notpull").show();
 		}
 	});
-	var comingle_checked = localStorage.getItem("cominglechecked");
-	 if (comingle_checked){
-		 $(".comingle").show();
-		 $(".notcomingle").hide();
+	var pull_checked = localStorage.getItem("pullchecked");
+	 if (pull_checked){
+		 $(".pull").show();
+		 $(".notpull").hide();
 	 }	else {
-		 $(".comingle").hide();
-		 $(".notcomingle").show();
+		 $(".pull").hide();
+		 $(".notpull").show();
 	 };
 
 /* WindowEnv */
