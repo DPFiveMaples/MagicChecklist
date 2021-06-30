@@ -195,6 +195,12 @@ caption,
   text-align: center;
 }
 
+/* Postal Presort */
+.presortinfo {
+  text-align: center;
+}
+
+
 /* Post Compose Checklist */
 .pcinfo {
   text-align: center;
