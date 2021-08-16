@@ -28,7 +28,7 @@
     <select id="sel_envelope">
       <option></option>
       <option id="env_buskro">Buskro</option>
-      <option id="env_printdept">Print Dept</option>
+      <option id="env_printdept">Print Dept (Xante)</option>
       <option id="env_window">Windowed</option>
     </select>
     <br><br>
@@ -37,8 +37,8 @@
     <select id="sel_letter">
       <option></option>
       <option id="lett_letter">Letter Fold</option>
-      <option id="lett_zfold">Z Fold</option>
-      <option id="lett_half">Half Fold</option>
+      <option id="lett_zfold">Z-fold</option>
+      <option id="lett_half">Bi-fold</option>
       <option id="lett_double">Double Parallel</option>
       <option id="lett_no">No Fold</option>
     </select>
@@ -48,8 +48,8 @@
     <select id="sel_reply">
       <option></option>
       <option id="rep_letter">Letter Fold</option>
-      <option id="rep_zfold">Z Fold</option>
-      <option id="rep_half">Half Fold</option>
+      <option id="rep_zfold">Z-fold</option>
+      <option id="rep_half">Bi-fold</option>
       <option id="rep_no">Card/No Fold</option>
       <option id="rep_buskro">No Fold, Buskro print</option>
       <option id="rep_none">No Remit/Reply</option>
@@ -99,9 +99,9 @@ function processFormData() {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Print Dept" && lett == "Letter Fold" && reply == "Letter Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro" && lett == "Letter Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "Letter Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept" && lett == "Letter Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept" && lett == "Letter Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Windowed" && lett == "Letter Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Letter FWD" + ("<br>") + "Reply FWD";
@@ -118,18 +118,18 @@ function processFormData() {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Print Dept" && lett == "Z Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro" && lett == "Z Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept" && lett == "Z Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    // Half Fold
-    } else if (env == "Buskro" && lett == "Half Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    // Bi-fold
+  } else if (env == "Buskro" && lett == "Bi-fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter REV" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept" && lett == "Half Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept" && lett == "Bi-fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter REV" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro" && lett == "Half Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept" && lett == "Half Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     // Double Parallel
     } else if (env == "Buskro" && lett == "Double Parallel" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
@@ -146,18 +146,18 @@ function processFormData() {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Print Dept" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro" && lett == "No Fold" && reply == "Half Fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept" && lett == "No Fold" && reply == "Half Fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+    } else if (env == "Print Dept" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
     // Putney School RTC
-    } else if (env == "Buskro" && lett == "Z Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+  } else if (env == "Buskro" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept" && lett == "Z Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Print Dept" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Buskro" && lett == "Half Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Buskro" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept" && lett == "Half Fold" && reply == "Half Fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Print Dept" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
          output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     // Not Programmed
     } else {
