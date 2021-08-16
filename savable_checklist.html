@@ -26,20 +26,20 @@
 <legend>Job Attributes</legend>
 <div id="jobfeatures">
 	<ul>
-		<li><input id="SecureCheck" type="checkbox" class="box">Secure</li>
-		<li><input id="ForeignCheck" type="checkbox" class="box">Foreign</li>
-		<li><input id="NCOACheck" type="checkbox" class="box">NCOA</li>
-		<li><input id="DeDupeCheck" type="checkbox" class="box">De-Dupe</li>
-		<li><input id="NDCSCFCheck" type="checkbox" class="box">NDC/SCF</li>
-		<li><input id="FCCheck" type="checkbox" class="box" name="specs" value="FC">First Class
+		<li><input id="SecureCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Secure_Jobs" target="_blank">Secure</a></li>
+		<li><input id="ForeignCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Foreign_Record_Processing" target="_blank">Foreign</a></li>
+		<li><input id="NCOACheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NCOA" target="_blank">NCOA</a></li>
+		<li><input id="DeDupeCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Duplicate_Removal" target="_blank">De-Dupe</a></li>
+		<li><input id="NDCSCFCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NDC/SCF" target="_blank">NDC/SCF</a></li>
+		<li><input id="FCCheck" type="checkbox" class="box" name="specs" value="FC"><a href="http://watson2/mediawiki/index.php?title=First_Class" target="_blank">First Class</a>
 			<ul>
-				<li><input id="RetailCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php/Retail_Stamp_Job" target="_blank">Retail Stamp</a></li>
+				<li><input id="RetailCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=First_Class#Retail_Stamp" target="_blank">Retail Stamp</a></li>
 			</ul>
 		</li>
-		<li><input id="PSLabelsCheck" type="checkbox" class="box">PS Labels</li>
-		<li><input id="WindowEnvCheck" type="checkbox" class="box">Windowed Envelope</li>
+		<li><input id="PSLabelsCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pressure_Sensitive_Labels" target="_blank">PS Labels</a></li>
+		<li><input id="WindowEnvCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Window_Envelopes" target="_blank">Windowed Envelope</a></li>
 		<br><br>
-		<li><input id="MergeCheck" type="checkbox" class="box" name="specs" value="Merge">Merge
+		<li><input id="MergeCheck" type="checkbox" class="box" name="specs" value="Merge"><a href="http://watson2/mediawiki/index.php?title=Mail_Merge" target="_blank">Merge</a>
 			<ul>
 				<li><input id="LetterCheck" type="checkbox" class="box">Letter</li>
 				<li><input id="ReplyCheck" type="checkbox" class="box">Reply</li>
@@ -49,7 +49,7 @@
 		</li>
 		<li><input id="PullCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pulls" target="_blank">Pulls</a></li>
 		<li><input id="DropsElseCheck" type="checkbox" class="box">Drops Elsewhere</li>
-		<li><input id="SublistCheck" type="checkbox" class="box">Sublisted from <textarea rows="1" cols="6"></textarea></li>
+		<li><input id="SublistCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Sublists" target="_blank">Sublisted from</a> <textarea rows="1" cols="6"></textarea></li>
 	</ul>
 </div>
 </fieldset>
@@ -63,7 +63,7 @@
 
 <div id="checklist">
 	<ul>
-	<li><input type="checkbox" class="box">Pull up Midnight report; <a href="http://watson2/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
+	<li><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Midnight_Reports" target="_blank">Pull up Midnight report</a>; <a href="http://watson2/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">update Midnight</a> with DP start, DP initials, and DP status</li>
 	<li class="secure"><input type="checkbox" class="box">Add the job to the Secure Job Deletion Schedule</li>
      	<li class="fc"><input type="checkbox" class="box"><span class="strikeIt">If Flat, notify Warehouse to order tubs</span></li>
      	<li class="merge"><input type="checkbox" class="box">Verify if FM or client stock
@@ -215,9 +215,9 @@
 	<li><input type="checkbox" class="box">Save Consolidated WO and transfer checkmarks</li>
 	<li class="foreign"><input type="checkbox" class="box">Save Foreign WO and transfer checkmarks</li>
 	<li><input type="checkbox" class="box">Fill out<span class="foreign"> domestic and foreign</span> label layout on work order</li>
-	<li class="notenv_pc"><input type="checkbox" class="box">Setup labels
+	<li class="notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Output_to_X" target="_blank">Setup labels</a>
 		<ul>
-			<li class="merge"><input type="checkbox" class="box">Verify output order</li>
+			<li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Output_Order" target="_blank">Verify output order</a></li>
 			<li><input type="checkbox" class="box">Correct fields from worksheet</li>
 			<li><input type="checkbox" class="box">Required fields are locked</li>
 			<li><input type="checkbox" class="box"><span class="strikeIt">Comma b/t city & state?</span></li>
@@ -273,7 +273,7 @@
 	<li class="env_pc"><input type="checkbox" class="box">Create limited CSV for Envelope/Postcard proofs
 		<ul>
 			<li class="env_pc"><b>Envelope/Postcard</b></li>
-        		<li><input type="checkbox" class="env_pc notretail box">Mark IMB, OEL, S/P in MailManager</li>
+        		<li><input type="checkbox" class="env_pc notretail box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB, OEL, S/P in MailManager</a></li>
         		<li><input type="checkbox" class="env_pc box">Verify output order</li>
 			<li><input type="checkbox" class="env_pc box">Correct fields from worksheet</li>
 			<li><input type="checkbox" class="env_pc box">Include IMB, OEL, S/P on piece</li>
@@ -314,8 +314,8 @@
 	<li class="merge"><input type="checkbox" class="box">All items on work order checked off (except print dept items)</li>
 			<li class="merge"><input type="checkbox" class="box">Email PM <span class="notsecure">your proofs</span><span class="secure">that proofs are in the job folder</span></li>
 			<li class="merge"><input type="checkbox" class="box">Update Midnight with variable proof date/version</li>
-			<li class="notretail notenv_pc"><input type="checkbox" class="box">Mark IMB characters</li>
-      <li class="merge"><input type="checkbox" class="box">Export final mail file</li>
+			<li class="notretail notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB characters</a></li>
+      <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Final_Mail_File" target="_blank">Export final mail file</a></li>
       <li class="notmerge"><input type="checkbox" class="box">All items on work order checked off & end date filled out</li>
 			<li class="notmerge"><input type="checkbox" class="box">Export final mail file</li>
       <li class="windowenv"><input type="checkbox" class="box">After approval, have sample printed to verify address fits</li>
@@ -350,9 +350,9 @@
 			</li>
      </span>
      <li class="notndcscf"><span class="notretail"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Windowbook#Upload_Mail.dat" target="_blank">Upload Mail.dat to DAT MAIL</a></span></li>
-     <li class="retail"><span class="merge"><input type="checkbox" class="box">Have another DP member do a Post Compose check</span></li>
-     <li class="notndcscf"><span class="notretail"><input type="checkbox" class="box">Have another DP member do <span class="merge">a Post Compose and</span> Postal Sort check</span></li>
-     <li class="merge"><span class="ndcscf"><input type="checkbox" class="box">Have another DP member do a <b>Post Compose</b> check</span></li>
+     <li class="retail"><span class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Post_Compose_Check" target="_blank">Have another DP member do a Post Compose check</a></span></li>
+     <li class="notndcscf"><span class="notretail"><input type="checkbox" class="box">Have another DP member do <span class="merge">a <a href="http://watson2/mediawiki/index.php?title=Post_Compose_Check" target="_blank">Post Compose</a> and</span> <a href="http://watson2/mediawiki/index.php?title=Postal_Presort_Check" target="_blank">Postal Sort</a> check</span></li>
+     <li class="merge"><span class="ndcscf"><input type="checkbox" class="box">Have another DP member do a <b><a href="http://watson2/mediawiki/index.php?title=Post_Compose_Check" target="_blank">Post Compose</a></b> check</span></li>
      <li class="merge"><input type="checkbox" class="box"><span class="strikeIt">If job has external production proofs, email production that job is approved</span></li>
      <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
       <li class="notmerge"><input type="checkbox" class="box">Update Midnight with end date and DP status</li>
@@ -376,7 +376,7 @@
     		</ul></span>
     	</li>
       <li class="not retail"><span class="ndcscf"><input type="checkbox" class="box">Upload Mail.dat to DAT MAIL</span></li>
-      <li class="ndcscf"><input type="checkbox" class="box">Have another DP member do <b>Postal Sort</b> check</li>
+      <li class="ndcscf"><input type="checkbox" class="box">Have another DP member do <b><a href="http://watson2/mediawiki/index.php?title=Postal_Presort_Check" target="_blank">Postal Sort</a></b> check</li>
 	  </ul>
 	</div>
 	<div>
