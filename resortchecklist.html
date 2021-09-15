@@ -5,7 +5,7 @@
 	Name: Resort Checklist
 	Authors: Lee Darcy
 	Date: 02/12/2021
-	Description: This is an interactive version of our Resort Checklist. This DOES NOT use localStorage to save the data in textboxes and checkboxes.
+	Description: This is an interactive version of our Resort Checklist.
 -->
   <title>Awesome DP Resort Checklist</title>
 	<link rel="stylesheet" href="styles.css">
@@ -16,9 +16,9 @@
 <body>
 <h1>Resort Checklist</h1>
   <div class="resortinfo">
-		Job Name:&nbsp;<textarea class="resort text" id="clientName" name="pt1" rows="1" cols="40"></textarea>&emsp;
-		Work Order:&nbsp;<textarea class="resort text" id="workOrderNum" name="pt2" rows="1" cols="6"></textarea>&emsp;
-		Date:&nbsp;<textarea class="resort text" id="datedDate" name="pt3" rows="1" cols="8"></textarea>
+		Job Name:&nbsp;<textarea class="resort text" id="clientNameResort" name="pt1" rows="1" cols="40"></textarea>&emsp;
+		Work Order:&nbsp;<textarea class="resort text" id="workOrderNumResort" name="pt2" rows="1" cols="6"></textarea>&emsp;
+		Date:&nbsp;<textarea class="resort text" id="datedDateResort" name="pt3" rows="1" cols="8"></textarea>
 		<br><br>
     <center>
 		<input type='button' onclick='clearBoxes(); ClearText()' value="Reset Checklist">
@@ -27,38 +27,35 @@
   </div>
   <fieldset>
   <legend>Job Attributes</legend>
-  <div id="jobfeatures">
+  <div id="jobfeaturesresort">
   	<ul>
-  		<li><input id="SecureCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Secure_Jobs" target="_blank">Secure</a></li>
-  		<li><input id="ForeignCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Foreign_Record_Processing" target="_blank">Foreign</a></li>
-  		<li><input id="NCOACheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NCOA" target="_blank">NCOA</a></li>
-  		<li><input id="DeDupeCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Duplicate_Removal" target="_blank">De-Dupe</a></li>
-  		<li><input id="NDCSCFCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NDC/SCF" target="_blank">NDC/SCF</a></li>
-  		<li><input id="FCCheck" type="checkbox" class="box" name="specs" value="FC"><a href="http://watson2/mediawiki/index.php?title=First_Class" target="_blank">First Class</a>
+  		<li><input id="SecureCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Secure_Jobs" target="_blank">Secure</a></li>
+  		<li><input id="ForeignCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Foreign_Record_Processing" target="_blank">Foreign</a></li>
+  		<li><input id="NCOACheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NCOA" target="_blank">NCOA</a></li>
+  		<li><input id="DeDupeCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Duplicate_Removal" target="_blank">De-Dupe</a></li>
+  		<li><input id="NDCSCFCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=NDC/SCF" target="_blank">NDC/SCF</a></li>
+  		<li><input id="FCCheckResort" type="checkbox" class="box" name="specs" value="FC"><a href="http://watson2/mediawiki/index.php?title=First_Class" target="_blank">First Class</a>
   			<ul>
-  				<li><input id="RetailCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=First_Class#Retail_Stamp" target="_blank">Retail Stamp</a></li>
+  				<li><input id="RetailCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=First_Class#Retail_Stamp" target="_blank">Retail Stamp</a></li>
   			</ul>
   		</li>
-  		<li><input id="PSLabelsCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pressure_Sensitive_Labels" target="_blank">PS Labels</a></li>
-  		<li><input id="WindowEnvCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Window_Envelopes" target="_blank">Windowed Envelope</a></li>
+  		<li><input id="PSLabelsCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pressure_Sensitive_Labels" target="_blank">PS Labels</a></li>
+  		<li><input id="WindowEnvCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Window_Envelopes" target="_blank">Windowed Envelope</a></li>
   		<br><br>
-  		<li><input id="MergeCheck" type="checkbox" class="box" name="specs" value="Merge"><a href="http://watson2/mediawiki/index.php?title=Mail_Merge" target="_blank">Merge</a>
+  		<li><input id="MergeCheckResort" type="checkbox" class="box" name="specs" value="Merge"><a href="http://watson2/mediawiki/index.php?title=Mail_Merge" target="_blank">Merge</a>
   			<ul>
-  				<li><input id="LetterCheck" type="checkbox" class="box">Letter</li>
-  				<li><input id="ReplyCheck" type="checkbox" class="box">Reply</li>
-  				<li><input id="Env_PCCheck" type="checkbox" class="box">Envelope/PC</li>
-  				<li><input id="ClientStockCheck" type="checkbox" class="box">Client Stock</li>
+  				<li><input id="LetterCheckResort" type="checkbox" class="box">Letter</li>
+  				<li><input id="ReplyCheckResort" type="checkbox" class="box">Reply</li>
+  				<li><input id="Env_PCCheckResort" type="checkbox" class="box">Envelope/PC</li>
+  				<li><input id="ClientStockCheckResort" type="checkbox" class="box">Client Stock</li>
   			</ul>
   		</li>
-  		<li><input id="PullCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pulls" target="_blank">Pulls</a></li>
-  		<li><input id="DropsElseCheck" type="checkbox" class="box">Drops Elsewhere</li>
-  		<li><input id="SublistCheck" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Sublists" target="_blank">Sublisted from</a> <textarea rows="1" cols="6"></textarea></li>
   	</ul>
   </div>
   </fieldset>
   <div id="resortchecklist">
     <ul>
-      <li class="notenv_pc"><input type="checkbox"><span class="strikeIt">Delete Output to X.</scan></li>
+      <li class="notenv_pc"><input type="checkbox"><span class="strikeItResort">Delete Output to X.</scan></li>
       <li><input type="checkbox">Delete digital/recycle paper:
         <ul>
           <li class="notretail"><input type="checkbox">Qualification Report</li>
@@ -78,12 +75,12 @@
           <li><input type="checkbox" class="box">Select Class and Category from work order</li>
           <li><input type="checkbox" class="box">Verify weight is in Midnight</li>
           <li><input type="checkbox" class="box">Verify piece thickness is in Midnight</li>
-          <li><input type="checkbox" class="box"><span class="strikeIt">If not #10, verify l and w is in Midnight</span></li>
-          <li><input type="checkbox" class="box"><span class="strikeIt">Select appropriate tray options if applicable</span></li>
+          <li><input type="checkbox" class="box"><span class="strikeItResort">If not #10, verify l and w is in Midnight</span></li>
+          <li><input type="checkbox" class="box"><span class="strikeItResort">Select appropriate tray options if applicable</span></li>
           <li><input type="checkbox" class="box">Select postage type
             <ul>
-              <li><input type="checkbox" class="box"><span class="strikeIt">If permit, use one permit and verify indicia</span></li>
-              <li><input type="checkbox" class="box"><span class="strikeIt">If precancelled stamp, select addt'l permit</span></li>
+              <li><input type="checkbox" class="box"><span class="strikeItResort">If permit, use one permit and verify indicia</span></li>
+              <li><input type="checkbox" class="box"><span class="strikeItResort">If precancelled stamp, select addt'l permit</span></li>
             </ul>
           </li>
         </ul>
@@ -113,7 +110,7 @@
             <li><input type="checkbox" class="box">Check the correct number of lines in file</li>
             <li><input type="checkbox" class="box">Check for long fields and inconsistent case</li>
             <li><input type="checkbox" class="box">Check city for spacing and zip for placement</li>
-            <li><input type="checkbox" class="box"><span class="strikeIt">Comma b/t city & state?</span></li>
+            <li><input type="checkbox" class="box"><span class="strikeItResort">Comma b/t city & state?</span></li>
             <li class="foreign"><input type="checkbox" class="box">Check if ordered by country</li>
         </ul>
       </li>
