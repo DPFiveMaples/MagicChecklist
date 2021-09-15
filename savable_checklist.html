@@ -122,6 +122,7 @@
 			<li><input type="checkbox" class="box">Save "post-dedupe" distribution report</li>
 			<li><input type="checkbox" class="box">Flag hidden records DUPE</li>
 			<li><input type="checkbox" class="box"><span class="strikeIt">Remove suppression files if applicable</span></li>
+      <li><input type="checkbox" class="box"><span class="strikeIt">If applicable, create labels before sublisting; sublist records</span></li>
 			<li><input type="checkbox" class="box">Write final totals for dom. and for. on worksheet</li>
 		</ul>
 	</li>
@@ -133,7 +134,7 @@
 			<li><input type="checkbox" class="box">Reorder records by <span class="retail">zip-</span>country index</li>
 		</ul>
 	</li>
-	<li class="notsublist"><input type="checkbox" class="box"><span class="strikeIt">Create labels before sublisting if applicable</span></li>
+	<li class="notsublist notdedupe"><input type="checkbox" class="box"><span class="strikeIt">Create labels before sublisting if applicable</span></li>
 	<li><input type="checkbox" class="box">Update Midnight with final DP count and update totals<span  class="foreign"> domestic and foreign</span></li>
 	<li class="fc"><input type="checkbox" class="box">Type None in Midnight for NDC/SCF</li>
 	<li><input type="checkbox" class="box"><span class="strikeIt">Email final totals to print department if applicable</span></li>
@@ -218,6 +219,7 @@
 			<li class="windowenv"><input type="checkbox" class="box">Included VPC ### for <a href="http://watson2/mediawiki/index.php/Window_Envelopes" target="_blank">window envelopes</a></li>
 		</ul>
 	</li>
+  <li class="merge"><input type="checkbox" class="box">Record first and last record on work sheet</li>
 	<li class="notmerge"><input type="checkbox" class="box">Save/Print Labels to X
         	<ul>
 			<li><input type="checkbox" class="box">Save to X and write file name on work order</li>
@@ -293,7 +295,6 @@
 			</li>
 		</ul>
 	</li>
-	<li class="merge"><input type="checkbox" class="box">Record first and last record on work sheet</li>
 	<li class="merge"><input type="checkbox" class="box">Generate proofs
 		<ul class="windowenv">
 			<li><input type="checkbox" class="box">If windowed envelope, create a live sample</li>
@@ -307,7 +308,7 @@
 	<li class="merge"><input type="checkbox" class="box">All items on work order checked off (except print dept items)</li>
 			<li class="merge"><input type="checkbox" class="box">Email PM <span class="notsecure">your proofs</span><span class="secure">that proofs are in the job folder</span></li>
 			<li class="merge"><input type="checkbox" class="box">Update Midnight with variable proof date/version</li>
-			<li class="notretail notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB characters</a></li>
+			<li class="notretail notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB Digits</a></li>
       <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Final_Mail_File" target="_blank">Export final mail file</a></li>
       <li class="notmerge"><input type="checkbox" class="box">All items on work order checked off & end date filled out</li>
 			<li class="notmerge"><input type="checkbox" class="box">Export final mail file</li>

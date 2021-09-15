@@ -194,19 +194,23 @@ $(document).ready(function(){
 		if($(this).is(":checked")) {
 			localStorage.setItem('dedupechecked',true);
 			 $(".dedupe").show();
+			 $(".notdedupe").hide();
 		}
 	});
 	$("#DeDupeCheck").change(function(){
 		if(!$(this).is(":checked")) {
 			localStorage.removeItem('dedupechecked');
 		 $(".dedupe").hide();
+		 $(".notdedupe").show();
 		}
 	});
 	var dedupe_checked = localStorage.getItem("dedupechecked");
 	 if (dedupe_checked){
 		 $(".dedupe").show();
+		 $(".notdedupe").hide();
 	 }	else {
 		 $(".dedupe").hide();
+		 $(".notdedupe").show();
 	 };
 
  /* FC */
@@ -627,19 +631,23 @@ $(document).ready(function(){
 				if($(this).is(":checked")) {
 					localStorage.setItem('dedupecheckedresort',true);
 					 $(".dedupe").show();
+					 $(".notdedupe").hide();
 				}
 			});
 			$("#DeDupeCheckResort").change(function(){
 				if(!$(this).is(":checked")) {
 					localStorage.removeItem('dedupecheckedresort');
 				 $(".dedupe").hide();
+				 $(".notdedupe").show();
 				}
 			});
 			var dedupe_checkedresort = localStorage.getItem("dedupecheckedresort");
 			 if (dedupe_checkedresort){
 				 $(".dedupe").show();
+				 $(".notdedupe").hide();
 			 }	else {
 				 $(".dedupe").hide();
+				 $(".notdedupe").show();
 			 };
 
 		 /* Resort - FC */
