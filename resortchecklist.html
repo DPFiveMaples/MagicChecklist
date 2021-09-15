@@ -27,7 +27,7 @@
   </div>
   <fieldset>
   <legend>Job Attributes</legend>
-  <div id="jobfeaturesresort">
+  <div id="jobfeatures">
   	<ul>
   		<li><input id="SecureCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Secure_Jobs" target="_blank">Secure</a></li>
   		<li><input id="ForeignCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Foreign_Record_Processing" target="_blank">Foreign</a></li>
@@ -41,7 +41,6 @@
   		</li>
   		<li><input id="PSLabelsCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Pressure_Sensitive_Labels" target="_blank">PS Labels</a></li>
   		<li><input id="WindowEnvCheckResort" type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Window_Envelopes" target="_blank">Windowed Envelope</a></li>
-  		<br><br>
   		<li><input id="MergeCheckResort" type="checkbox" class="box" name="specs" value="Merge"><a href="http://watson2/mediawiki/index.php?title=Mail_Merge" target="_blank">Merge</a>
   			<ul>
   				<li><input id="LetterCheckResort" type="checkbox" class="box">Letter</li>
@@ -53,7 +52,7 @@
   	</ul>
   </div>
   </fieldset>
-  <div id="resortchecklist">
+  <div id="checklist">
     <ul>
       <li class="notenv_pc"><input type="checkbox"><span class="strikeItResort">Delete Output to X.</scan></li>
       <li><input type="checkbox">Delete digital/recycle paper:
@@ -62,7 +61,7 @@
           <li class="notretail"><input type="checkbox">Postage Statement</li>
           <li class="notretail"><input type="checkbox">Tray tags</li>
           <li class="notretail"><input type="checkbox">Pallet Tags</li>
-          <li class="ndcscf"><input type="checkbox"> NDC/SCF paperwork.</li>
+          <li class="ndcscf"><input type="checkbox"> 2 NDC/SCF Destination Summary Reports</li>
           <li class="pslabels"><input type="checkbox">Pressure-sensitive labels</li>
         </ul>
       <li class="notretail"><input type="checkbox">Email BCC to cancel your Track N Trace job.<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reply to the initial email you received from BCC about the job.</i></li>
@@ -85,15 +84,35 @@
           </li>
         </ul>
         </li>
-      <li><input type="checkbox">Save/reprint postal paperwork, tray tags, and pallet tags.</li>
-      <li class="ndcscf"><input type="checkbox">Save/reprint NDC/SCF paperwork.</li>
+        <li class="ndcscf"><input type="checkbox">Re-save Destination Summary Report (all available NDC/SCF locations)</li>
+        <li class="notretail"><input type="checkbox" class="box">Verify record count in sort matches work order</li>
+      	<li class="notretail"><input type="checkbox" class="box">Click the Save & Exit Icon to save the sort; reopen</li>
+      	<li class="notretail"><input type="checkbox" class="box">Save qualification report
+      		<ul>
+      			<li><input type="checkbox" class="box">Review printout for accuracy (thickness, weight and class/category of mail<span class="ndcscf">, 2nd Destination Summary Report</span>)</li>
+      		</ul>
+      	</li>
+      	<li class="notretail"><input type="checkbox" class="box">Re-save 3602 (Postage Statement) report
+      		<ul>
+      			<li><input type="checkbox" class="box">Enter move update method</li>
+      			<li><input type="checkbox" class="box">Review printout for accuracy (class, cat, # of pieces, postage type, permit, crid, mu method)</li>
+      		</ul>
+      	</li>
+      	<li class="notretail"><input type="checkbox" class="box">Reprint container tags
+      		<ul>
+      			<li class="dropselse"><input type="checkbox" class="box">Change tag location to where it will be dropping</li>
+      			<li><input type="checkbox" class="box">Verify printer is clear</li>
+      			<li><input type="checkbox" class="box">Select IM Tray</li>
+      		</ul>
+      	</li>
+      	<li class="notretail"><input type="checkbox" class="box">Save pallet placards</li>
       <li class="ndcscf"><input type="checkbox">Send updated NDC/SCF email to the warehouse.</li>
-      <li><input type="checkbox">Reorder client stock from warehouse (if counts are very different or if stock has changed).</li>
+      <li class="clientstock"><input type="checkbox">Reorder client stock from warehouse (if counts are very different or if stock has changed).</li>
       <li class="notretail"><input type="checkbox">Redo Track N Trace.</li>
       <ul>
         <li><input type="checkbox">Recapture Track N Trace screenshot.</li>
       </ul>
-      <li class="notretail"><input type="checkbox">Recreate Mail.dat.</li>
+      <li class="notretail notndcscf"><input type="checkbox">Recreate Mail.dat.</li>
       <li><input type="checkbox">Update Midnight totals and reprint the Consolidated <span class="foreign">(and Foreign) </span> Work Order.</li>
       <li class="merge"><input type="checkbox">If a Merge job:
         <ul>
