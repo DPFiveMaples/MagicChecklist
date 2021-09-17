@@ -194,13 +194,14 @@
       <li><input type="checkbox" class="box">Take screenshot of final window w/serial # info</li>
     </ul>
   </li>
-	<li class="notndcscf"><span class="notretail"><input type="checkbox" class="box">Process <a href="http://watson2/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a>
+  <li class="notndcscf"><span class="notretail"><input type="checkbox" class="box">Process <a href="http://watson2/mediawiki/index.php/Mail.dat" target="_blank">Mail.dat</a>
 		<ul>
 			<li><input type="checkbox" class="box">Verify EInduction & FAST information boxes blank</li>
 			<li><input type="checkbox" class="box"><span class="strikeIt">If precancelled stamp, verify cost</span></li>
 		</ul></span>
 	</li>
-        <li class="ndcscf"><input type="checkbox" class="box">Send NDC/SCF email to warehouse:
+  <li class="notretail notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB Digits</a></li>
+  <li class="ndcscf"><input type="checkbox" class="box">Send NDC/SCF email to warehouse:
 		<ul>
 			<li><input type="checkbox" class="box">Request FAST information</li>
           		<li><input type="checkbox" class="box"><span class="strikeIt">Is NDC/SCF rerouted?</span></li>
@@ -308,9 +309,7 @@
 	<li class="merge"><input type="checkbox" class="box">All items on work order checked off (except print dept items)</li>
 			<li class="merge"><input type="checkbox" class="box">Email PM <span class="notsecure">your proofs</span><span class="secure">that proofs are in the job folder</span></li>
 			<li class="merge"><input type="checkbox" class="box">Update Midnight with variable proof date/version</li>
-			<li class="notretail notenv_pc"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Mark_Records_in_Mail_Manager" target="_blank">Mark IMB Digits</a></li>
-      <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Final_Mail_File" target="_blank">Export final mail file</a></li>
-      <li class="notmerge"><input type="checkbox" class="box">All items on work order checked off & end date filled out</li>
+			<li class="notmerge"><input type="checkbox" class="box">All items on work order checked off & end date filled out</li>
 			<li class="notmerge"><input type="checkbox" class="box">Export final mail file</li>
       <li class="windowenv"><input type="checkbox" class="box">After approval, have sample printed to verify address fits</li>
 			<li class="merge"><input type="checkbox" class="box">After approval, prepare file for printing
@@ -325,14 +324,15 @@
 				</ul>
 			</li>
       <span class="notenv_pc">
-      <li class="merge"><input type="checkbox" class="box">Save/Print Labels
-        <ul>
-	  <li><input type="checkbox" class="box">Save to X and write file name on work order</li>
-          <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
-          <li class="pslabels"><input type="checkbox" class="box"><span class="strikeIt">Printed return address P/S labels if applicable</span></li>
-        </ul>
-      </li>
-			<li class="merge"><input type="checkbox" class="box">Verify the labels saved/printed correctly
+    <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php?title=Final_Mail_File" target="_blank">Export final mail file</a></li>    
+    <li class="merge"><input type="checkbox" class="box">Save/Print Labels
+      <ul>
+        <li><input type="checkbox" class="box">Save to X and write file name on work order</li>
+        <li class="pslabels"><input type="checkbox" class="box">Printed manually (P/S labels only)</li>
+        <li class="pslabels"><input type="checkbox" class="box"><span class="strikeIt">Printed return address P/S labels if applicable</span></li>
+      </ul>
+    </li>
+		<li class="merge"><input type="checkbox" class="box">Verify the labels saved/printed correctly
 				<ul>
 					<li><input type="checkbox" class="box">Verify fields match worksheet</li>
 					<li><input type="checkbox" class="box">Check the correct number of lines in file</li>
