@@ -109,18 +109,18 @@ function processFormData() {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Print Dept (Xante)" && lett == "Letter Fold" && reply == "Buskro" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    // Z Fold
-    } else if (env == "Buskro" && lett == "Z Fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
+    // Z-fold
+  } else if (env == "Buskro" && lett == "Z-fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD";
-    } else if (env == "Print Dept (Xante)" && lett == "Z Fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" ;
-    } else if (env == "Buskro" && lett == "Z Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "Z-fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept (Xante)" && lett == "Z Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept (Xante)" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
     // Bi-fold
   } else if (env == "Buskro" && lett == "Bi-fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
@@ -153,9 +153,9 @@ function processFormData() {
     } else if (env == "Print Dept (Xante)" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
     // Putney School RTC
-  } else if (env == "Buskro" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+  } else if (env == "Buskro" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept (Xante)" && lett == "Z Fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
     } else if (env == "Buskro" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
