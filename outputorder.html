@@ -69,7 +69,7 @@
     <select id="sel_finaloutputorder">
       <option></option>
       <option id="fin_whatever" selected>Does not matter</option>
-      <option id="fin_forward">FWD (A-Z, 1-100)</option>
+      <option id="fin_forward">RTC/FWD (A-Z, 1-100)</option>
     </select>
     <br><br>
   </div>
@@ -144,22 +144,22 @@ function processFormData() {
     } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
           output = "Envelope FWD" + ("<br>") + "Letter FWD";
     // RTC
-    } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+  } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept (Xante)" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+    } else if (env == "Print Dept (Xante)" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+    } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept (Xante)" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "Does not matter") {
+    } else if (env == "Print Dept (Xante)" && lett == "No Fold" && reply == "Bi-fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
     // Putney School RTC
-  } else if (env == "Buskro/Canon" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+  } else if (env == "Buskro/Canon" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Print Dept (Xante)" && lett == "Z-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
-    } else if (env == "Buskro/Canon" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Buskro/Canon" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
         output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
-    } else if (env == "Print Dept (Xante)" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "FWD (A-Z, 1-100)") {
+    } else if (env == "Print Dept (Xante)" && lett == "Bi-fold" && reply == "Bi-fold" && ins == "Machine Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
          output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     // Not Programmed
     } else {
