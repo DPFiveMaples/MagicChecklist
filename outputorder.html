@@ -156,6 +156,8 @@ function processFormData() {
        output = "Envelope FWD" + ("<br>") + "Letter REV";
     } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Bi-fold" && ins == "Hand Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
       output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
+    } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
+        output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
       output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
     } else if (env == "Xante" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Not Inserted (return flat)" && fin == "RTC/FWD (A-Z, 1-100)") {
