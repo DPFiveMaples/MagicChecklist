@@ -39,6 +39,14 @@ fieldset{
   float: center;
 }
 
+#jobfeaturesresort {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  height: 100 px;
+  float: center;
+}
+
 #checklist {
   -webkit-column-count: 2;
   -moz-column-count: 2;
