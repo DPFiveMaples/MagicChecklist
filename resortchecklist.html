@@ -41,7 +41,7 @@
   		</li>
   		<li><input id="PSLabelsCheckResort" type="checkbox" class="boxResort"><a href="http://watson2/mediawiki/index.php?title=Pressure_Sensitive_Labels" target="_blank">PS Labels</a></li>
   		<li><input id="WindowEnvCheckResort" type="checkbox" class="boxResort"><a href="http://watson2/mediawiki/index.php?title=Window_Envelopes" target="_blank">Windowed Envelope</a></li>
-      <br>
+      <li><input id="DigitalIntegrationCheckResort" type="checkbox" class="boxResort">Digital Integration</li>
       <br>
   		<li><input id="MergeCheckResort" type="checkbox" class="boxResort" name="specs" value="Merge"><a href="http://watson2/mediawiki/index.php?title=Mail_Merge" target="_blank">Merge</a>
   			<ul>
@@ -51,6 +51,8 @@
   				<li><input id="ClientStockCheckResort" type="checkbox" class="boxResort">Client Stock</li>
         </ul>
   		</li>
+      <li><input id="DropsElseCheckResort" type="checkbox" class="boxResort">Drops Elsewhere</li>
+  		<li><input id="SublistCheckResort" type="checkbox" class="boxResort"><a href="http://watson2/mediawiki/index.php?title=Sublists" target="_blank">Sublisted from</a> <textarea rows="1" cols="6"></textarea></li>
     </ul>
   </div>
   </fieldset>
@@ -66,7 +68,7 @@
           <li class="ndcscf"><input type="checkbox" class="boxResort"> 2 NDC/SCF Destination Summary Reports</li>
           <li class="pslabels"><input type="checkbox" class="boxResort">Pressure-sensitive labels</li>
         </ul>
-      <li class="notretail"><input type="checkbox" class="boxResort">Email BCC to cancel your Track N Trace job.<br><i>Reply to the initial email you received from BCC about the job.</i></li>
+      <li class="notretail"><input type="checkbox" class="boxResort">Email BCC to cancel your Track N Trace job.<br><i>Fwd the initial email from BCC to dataservices@bccsoftware.com.</i></li>
       <li class="notretail"><input type="checkbox" class="boxResort">Delete Track N Trace screenshot.</li>
       <li><input type="checkbox" class="boxResort">Make the necessary changes to the records in Mail Manager.</li>
       <li class="foreign"><input type="checkbox" class="boxResort">Reorder the list by Country.</li>
@@ -116,7 +118,7 @@
       </ul>
       <li class="notretail notndcscf"><input type="checkbox" class="boxResort">Recreate Mail.dat.</li>
       <li><input type="checkbox" class="boxResort">Update Midnight totals and reprint the Consolidated <span class="foreign">(and Foreign) </span> Work Order.</li>
-      <li class="merge"><input type="checkbox" class="boxResort">If a Merge job:
+      <li class="merge">Merge:
         <ul>
           <li class="env_pc"><input type="checkbox" class="boxResort">Re-mark USPS fields.</li>
           <li><input type="checkbox" class="boxResort">Re-output all merge CSVs.</li>
@@ -135,7 +137,7 @@
             <li class="foreign"><input type="checkbox" class="boxResort">Check if ordered by country</li>
         </ul>
       </li>
-      <li><input type="checkbox" class="boxResort">Re-mark IMB fields.</li>
+      <li class="notenv_pc"><input type="checkbox" class="boxResort">Re-mark IMB fields.</li>
       <li class="pslabels"><input type="checkbox" class="boxResort">Reprint any pressure-sensitive labels.</li>
       <li><input type="checkbox" class="boxResort">Spot check a few random records.</li>
       <li><input type="checkbox" class="boxResort">Reoutput Final Mail File.</li>

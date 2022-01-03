@@ -91,7 +91,7 @@ $(document).ready(function(){
 		};
 
 
-		/* Foreign */
+		/* Resort - Foreign */
 
 		$(document).ready(function(){
 			checkForeignResortVal();
@@ -159,7 +159,7 @@ $(document).ready(function(){
 		 };
 
 
-		/* Retail */
+		/* Resort - Retail */
 
 		$(document).ready(function(){
 			checkRetailResortVal();
@@ -195,7 +195,7 @@ $(document).ready(function(){
 		};
 
 
-		/* PSLabels */
+		/* Resort - PSLabels */
 
 		$(document).ready(function(){
 			checkPSLabelsResortVal();
@@ -229,6 +229,23 @@ $(document).ready(function(){
 		};
 
 
+		/* Resort - DropsElse */
+		$(document).ready(function(){
+			checkDropsElseResortVal();
+			$("#DropsElseCheckResort").on('change', checkDropsElseResortVal);
+		});
+
+		var checkDropsElseResortVal = function () {
+			if($("#DropsElseCheckResort").is(":checked")){
+				$(".dropselse").show();
+				$(".notdropselse").hide();
+			} else {
+				$(".dropselse").hide();
+				$(".notdropselse").show();
+			}
+		};
+
+
 		/* Resort - WindowEnv */
 
 		$(document).ready(function(){
@@ -243,6 +260,24 @@ $(document).ready(function(){
 				$(".windowenv").hide();
 			}
 		};
+
+		/* Resort - Sublist */
+
+		$(document).ready(function(){
+			checkSublistResortVal();
+			$("#SublistCheckResort").on('change', checkSublistResortVal);
+		});
+
+		var checkSublistResortVal = function () {
+			if($("#SublistCheckResort").is(":checked")){
+				$(".sublist").show();
+				$(".notsublist").hide();
+			} else {
+				$(".sublist").hide();
+				$(".notsublist").show();
+			}
+		};
+
 
 
 			 /* Resort - Strikethrough */
