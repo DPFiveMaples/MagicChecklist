@@ -126,7 +126,7 @@
 			<li><input type="checkbox" class="box">Flag hidden records DUPE</li>
 			<li><input type="checkbox" class="box"><span class="strikeIt">Remove suppression files if applicable</span></li>
       <li><input type="checkbox" class="box"><span class="strikeIt">Create labels before sublisting; sublist records, if applicable</span></li>
-			<li><input type="checkbox" class="box">Write final total<span class="foreign">s for dom. and for. </span>on worksheet</li>
+			<li><input type="checkbox" class="box">Write final total<span class="foreign">s for dom. and for.</span> on worksheet</li>
 		</ul>
 	</li>
 	<li class="foreign">Foreign records<span class="notsublist">, part 2</span>:
@@ -186,13 +186,6 @@
 			<li><input type="checkbox" class="box">Review printout for accuracy (class, cat, # of pieces, postage type, permit, crid, mu method)</li>
 		</ul>
 	</li>
-	<li class="notretail"><input type="checkbox" class="box">Print container tags
-		<ul>
-			<li class="dropselse"><input type="checkbox" class="box">Change tag location to where it will be dropping</li>
-			<li><input type="checkbox" class="box">Verify printer is clear</li>
-			<li><input type="checkbox" class="box">Select IM Tray</li>
-		</ul>
-	</li>
 	<li class="notretail"><input type="checkbox" class="box">Save pallet placards</li>
 	<li class="notretail"><input type="checkbox" class="box">Process <a href="http://watson2/mediawiki/index.php/Track_N_Trace" target="_blank">Track N Trace</a>
     <ul>
@@ -213,7 +206,7 @@
 		</ul>
 	</li>
 	<li><input type="checkbox" class="box">Save Consolidated WO and transfer checkmarks</li>
-	<li class="foreign"><input type="checkbox" class="box">Save Foreign WO and transfer checkmarks</li>
+	<li class="foreign"><input type="checkbox" class="box">Save Foreign WO and transfer checkmarks; type foreign count in header</li>
 	<li><input type="checkbox" class="box">Fill out<span class="foreign"> domestic and foreign</span> label layout on work order</li>
 	<li class="notenv_pc"><a href="http://watson2/mediawiki/index.php?title=Output_to_X" target="_blank">Setup labels</a>
 		<ul>
@@ -362,8 +355,16 @@
      <li class="notretail"><input type="checkbox" class="box">Have another DP member do <span class="merge">a <a href="http://watson2/mediawiki/index.php?title=Post_Compose_Check" target="_blank">Post Compose</a> and</span> <a href="http://watson2/mediawiki/index.php?title=Postal_Presort_Check" target="_blank">Postal Sort</a> check</span></li>
      <li class="merge"><span class="notenv_pc"><input type="checkbox" class="box"><span class="strikeIt">If job has external production proofs, email production that job is approved</span></span></li>
      <li class="merge"><input type="checkbox" class="box"><a href="http://watson2/mediawiki/index.php/Midnight_Process_for_DP" target="_blank">Update Midnight</a> with end date, DP status, and Proof approval.</li>
-      <li class="notmerge"><input type="checkbox" class="box">Update Midnight with end date and DP status</li>
-      <li><input type="checkbox" class="box">Create PDF WO Packet
+     <li class="notmerge"><input type="checkbox" class="box">Update Midnight with end date and DP status</li>
+     <li class="notretail"><input type="checkbox" class="box">Print container tags
+   		<ul>
+   			<li class="dropselse"><input type="checkbox" class="box">Change tag location to where it will be dropping</li>
+   			<li><input type="checkbox" class="box">Verify printer is clear</li>
+   			<li><input type="checkbox" class="box">Select IM Tray</li>
+   		</ul>
+   	</li>
+    <li class="merge"><input type="checkbox" class="box">Review <a href="http://watson2/mediawiki/index.php?title=Mail_Merge#Press_Proofs">press proofs</a></li>
+     <li><input type="checkbox" class="box">Create PDF WO Packet
         <ul>
           <li><input type="checkbox" class="box">Work Order with checkmarks</li>
           <li class="pull"><input type="checkbox" class="box">Label WO with # of pulls (at top, in DP/Merge section, in lettershop section, in print section)</li>
