@@ -618,8 +618,10 @@ $(document).ready(function(){
 var checkWindowEnvVal = function () {
 	if($("#WindowEnvCheck").is(":checked")){
 		$(".windowenv").show();
+		$(".notwindowenv").hide();
 	} else {
 		$(".windowenv").hide();
+		$(".notwindowenv").show();
 	}
 };
 
