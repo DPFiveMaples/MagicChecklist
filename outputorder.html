@@ -91,7 +91,9 @@ function processFormData() {
         output = "Envelope REV" + ("<br>") +  "Letter FWD";
     } else if (env == "Xante" && lett == "Letter Fold" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD";
-    } else if (env == "Buskro/Canon" && lett == "Letter Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+    } else if (env == "Buskro/Canon" && lett == "Letter Fold" && reply == "No Remit/Reply" && ins == "Hand Inserted" && fin == "Does not matter") {
+          output = "Envelope REV" + ("<br>") + "Letter FWD";
+   } else if (env == "Buskro/Canon" && lett == "Letter Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter REV" + ("<br>") + "Reply FWD";
     } else if (env == "Xante" && lett == "Letter Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Envelope FWD" + ("<br>") + "Letter FWD" + ("<br>") + "Reply REV";
