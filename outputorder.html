@@ -155,6 +155,8 @@ function processFormData() {
     } else if (env == "Windowed" && lett == "Double Parallel" && reply == "No Remit/Reply" && ins == "Machine Inserted" && fin == "Does not matter") {
         output = "Letter FWD";
     } else if (env == "Buskro/Canon" && lett == "Double Parallel" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
+        output = "Envelope REV" + ("<br>") + "Letter FWD" + ("<br>") + "Reply FWD";
+	} else if (env == "Buskro/Canon" && lett == "Double Parallel" && reply == "Card/No Fold" && ins == "Hand Inserted" && fin == "RTC/FWD (A-Z, 1-100)") {
         output = "Envelope FWD" + ("<br>") + "Letter REV" + ("<br>") + "Reply FWD";
     // Holiday Card/No Fold
     } else if (env == "Buskro/Canon" && lett == "No Fold" && reply == "Card/No Fold" && ins == "Machine Inserted" && fin == "Does not matter") {
